@@ -10,7 +10,6 @@
 <title>Hayat Kodu — Taner Öztürk</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -19,18 +18,17 @@
 
 :root{
     --bg:#07080d;
-    --bg2:#0d0e16;
-    --card:rgba(17,18,27,.80);
-
+    --bg2:#0d0e15;
+    --card:rgba(17,18,27,.82);
     --gold:#d7ad61;
-    --gold2:#f2d48f;
-    --gold3:#9a7334;
-
-    --white:#f7f3ea;
+    --gold2:#f2d38e;
+    --gold3:#9a7435;
+    --white:#f6f2e9;
     --muted:#9295a3;
-    --muted2:#686b78;
-
-    --line:rgba(215,173,97,.30);
+    --muted2:#686c79;
+    --line:rgba(215,173,97,.28);
+    --green:#86c9a3;
+    --red:#d98f8f;
 }
 
 html{
@@ -39,143 +37,84 @@ html{
 
 body{
     min-height:100vh;
-    color:var(--white);
-
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "SF Pro Display",
-        "Segoe UI",
-        sans-serif;
-
-    overflow-x:hidden;
-
     background:
-        radial-gradient(
-            circle at 85% 5%,
-            rgba(215,173,97,.16),
-            transparent 24%
-        ),
-        radial-gradient(
-            circle at 0% 45%,
-            rgba(75,82,120,.14),
-            transparent 28%
-        ),
-        linear-gradient(
-            145deg,
-            #05060a 0%,
-            #0b0c13 48%,
-            #07080d 100%
-        );
+        radial-gradient(circle at 85% 5%,rgba(215,173,97,.16),transparent 24%),
+        radial-gradient(circle at 5% 45%,rgba(76,83,130,.13),transparent 28%),
+        linear-gradient(145deg,#05060a,#0a0b11 45%,#07080d);
+    color:var(--white);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
+    overflow-x:hidden;
 }
-
-/* ATMOSPHERE */
 
 body:before{
     content:"";
     position:fixed;
-
     width:520px;
     height:520px;
-
-    right:-290px;
-    top:-220px;
-
-    border-radius:50%;
-
+    right:-280px;
+    top:-210px;
     border:1px solid rgba(215,173,97,.10);
-
+    border-radius:50%;
     box-shadow:
-        0 0 0 38px rgba(215,173,97,.025),
-        0 0 0 78px rgba(215,173,97,.018),
-        0 0 0 120px rgba(215,173,97,.010);
-
+        0 0 0 35px rgba(215,173,97,.025),
+        0 0 0 75px rgba(215,173,97,.018),
+        0 0 0 115px rgba(215,173,97,.012);
     pointer-events:none;
 }
 
 body:after{
     content:"✦";
-
     position:fixed;
-
     right:14%;
-    top:13%;
-
+    top:14%;
     color:rgba(241,209,139,.25);
-
     font-size:18px;
-
     pointer-events:none;
 }
 
-/* CONTAINER */
+button,
+input{
+    font-family:inherit;
+}
+
+button{
+    -webkit-tap-highlight-color:transparent;
+}
 
 .container{
     width:min(1120px,calc(100% - 32px));
-
     margin:auto;
-
-    padding:
-        54px
-        0
-        65px;
+    padding:45px 0 60px;
 }
 
 /* HERO */
 
 .hero{
     position:relative;
-
-    padding:
-        18px
-        25px
-        42px;
+    padding:18px 24px 42px;
 }
 
 .badge{
     display:inline-flex;
-
     align-items:center;
-
-    padding:
-        11px
-        19px;
-
-    border:
-        1px solid
-        rgba(215,173,97,.32);
-
+    padding:10px 18px;
+    border:1px solid rgba(215,173,97,.32);
     border-radius:50px;
-
     color:#c8c9d0;
-
     font-size:11px;
-
     letter-spacing:3.5px;
-
     text-transform:uppercase;
-
     background:rgba(255,255,255,.025);
-
     backdrop-filter:blur(12px);
 }
 
 .logo{
-    margin-top:28px;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:
-        clamp(50px,9vw,92px);
-
+    margin-top:27px;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(50px,9vw,92px);
     font-weight:400;
-
     letter-spacing:2px;
-
-    line-height:.95;
+    line-height:.94;
 }
 
 .logo span{
@@ -184,73 +123,44 @@ body:after{
 
 .subtitle{
     margin-top:25px;
-
-    color:#a6a8b3;
-
-    font-size:
-        clamp(16px,2.3vw,22px);
-
+    color:#a7a9b4;
+    font-size:clamp(16px,2.3vw,22px);
     line-height:1.7;
-
     max-width:730px;
 }
 
 .gold-line{
-    position:relative;
-
     width:210px;
     height:1px;
-
     margin-top:30px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--gold),
-            transparent
-        );
+    background:linear-gradient(90deg,var(--gold),transparent);
+    position:relative;
 }
 
 .gold-line:after{
     content:"✦";
-
     position:absolute;
-
-    left:99px;
+    left:103px;
     top:-11px;
-
     color:var(--gold2);
-
     background:#08090e;
-
     padding:0 8px;
 }
 
 /* CARD */
 
 .card{
-    border:
-        1px solid
-        var(--line);
-
+    border:1px solid var(--line);
     background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.035),
-            rgba(255,255,255,.010)
-        ),
+        linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.01)),
         var(--card);
-
     border-radius:30px;
-
     box-shadow:
-        0 30px 80px rgba(0,0,0,.40),
-        inset 0 1px 0 rgba(255,255,255,.045);
-
-    backdrop-filter:blur(20px);
+        0 30px 80px rgba(0,0,0,.38),
+        inset 0 1px 0 rgba(255,255,255,.04);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
 }
-
-/* FORM */
 
 .form-card{
     padding:38px;
@@ -258,224 +168,119 @@ body:after{
 
 .section-title{
     display:flex;
-
     align-items:center;
-
     gap:18px;
-
-    margin-bottom:8px;
 }
 
 .section-icon{
     width:52px;
     height:52px;
-
-    flex:none;
-
-    border:
-        1.5px solid
-        var(--gold2);
-
+    min-width:52px;
+    border:1px solid var(--gold2);
     border-radius:50%;
-
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     color:var(--gold2);
-
     font-size:23px;
-
-    box-shadow:
-        0 0 25px
-        rgba(215,173,97,.08);
+    box-shadow:0 0 25px rgba(215,173,97,.08);
 }
 
 .section-title h2{
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:29px;
-
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:28px;
     font-weight:500;
 }
 
 .section-desc{
-    margin-left:70px;
-
-    margin-bottom:30px;
-
+    margin:12px 0 30px 70px;
     color:#8e919d;
-
     font-size:15px;
-
     line-height:1.6;
 }
 
-/* INPUT GRID */
-
 .grid{
     display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:
-        24px
-        30px;
+    grid-template-columns:1fr 1fr;
+    gap:23px 28px;
 }
 
 .field label{
     display:block;
-
     margin-bottom:10px;
-
+    font-size:14px;
+    font-weight:650;
     color:#e6e2db;
-
-    font-size:15px;
-
-    font-weight:600;
 }
 
 .field input{
     width:100%;
-
-    height:65px;
-
-    padding:
-        0
-        20px;
-
-    border:
-        1px solid
-        rgba(150,153,170,.42);
-
-    border-radius:18px;
-
+    height:64px;
+    border-radius:17px;
+    border:1px solid rgba(150,153,170,.40);
     outline:none;
-
-    background:
-        rgba(3,4,8,.65);
-
+    background:rgba(3,4,8,.65);
     color:#f5f2ea;
-
-    font-size:17px;
-
-    transition:
-        border .25s,
-        box-shadow .25s,
-        transform .25s;
+    padding:0 19px;
+    font-size:16px;
+    transition:.25s;
+    -webkit-appearance:none;
 }
 
 .field input::placeholder{
-    color:#666a77;
+    color:#656975;
 }
 
 .field input:focus{
     border-color:var(--gold);
-
     box-shadow:
-        0 0 0 3px
-        rgba(215,173,97,.08);
-
-    transform:translateY(-1px);
+        0 0 0 3px rgba(215,173,97,.08),
+        0 8px 25px rgba(0,0,0,.12);
 }
-
-/* DATE / TIME */
-
-.field input[type="date"],
-.field input[type="time"]{
-    color-scheme:dark;
-}
-
-/* BUTTON */
 
 .solve-btn{
     width:100%;
-
-    height:70px;
-
-    margin-top:32px;
-
-    border:
-        1px solid
-        #f0cc79;
-
-    border-radius:20px;
-
-    background:
-        linear-gradient(
-            110deg,
-            #e8bf70,
-            #b68538,
-            #e5bd6d
-        );
-
+    min-height:68px;
+    margin-top:31px;
+    border:1px solid #f0cc79;
+    border-radius:19px;
+    background:linear-gradient(110deg,#e8bf70,#b68538,#e5bd6d);
     color:#101116;
-
     font-size:18px;
-
     font-weight:800;
-
     letter-spacing:.3px;
-
     cursor:pointer;
-
     box-shadow:
-        0 12px 30px
-        rgba(215,173,97,.17),
-
-        inset 0 1px
-        rgba(255,255,255,.45);
-
-    transition:.25s;
+        0 12px 30px rgba(215,173,97,.17),
+        inset 0 1px rgba(255,255,255,.45);
+    transition:.22s;
 }
 
 .solve-btn:hover{
     transform:translateY(-2px);
-
-    box-shadow:
-        0 17px 38px
-        rgba(215,173,97,.25);
+    box-shadow:0 17px 38px rgba(215,173,97,.25);
 }
 
 .solve-btn:active{
     transform:scale(.985);
 }
 
-/* DISCLAIMER */
-
 .disclaimer{
     display:flex;
-
-    gap:15px;
-
-    margin-top:23px;
-
+    gap:14px;
+    margin-top:22px;
     color:#858996;
-
     font-size:12px;
-
     line-height:1.65;
 }
 
 .info{
     width:27px;
     height:27px;
-
     min-width:27px;
-
-    border:
-        1px solid
-        #777c8d;
-
+    border:1px solid #777c8d;
     border-radius:50%;
-
     display:flex;
-
     align-items:center;
     justify-content:center;
 }
@@ -484,89 +289,53 @@ body:after{
 
 .features{
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:22px;
-
-    margin-top:25px;
+    grid-template-columns:repeat(3,1fr);
+    gap:21px;
+    margin-top:24px;
 }
 
 .feature{
-    padding:31px 20px;
-
-    min-height:165px;
-
+    padding:30px 20px;
+    min-height:160px;
     text-align:center;
-
-    border:
-        1px solid
-        rgba(215,173,97,.24);
-
-    border-radius:25px;
-
-    background:
-        rgba(12,13,20,.67);
-
+    border-color:rgba(215,173,97,.22);
     transition:.25s;
 }
 
 .feature-icon{
     color:var(--gold2);
-
-    font-size:32px;
-
+    font-size:31px;
     margin-bottom:16px;
 }
 
 .feature h3{
-    font-size:18px;
-
+    font-size:17px;
     margin-bottom:9px;
 }
 
 .feature p{
     color:#858996;
-
-    font-size:14px;
-
-    line-height:1.5;
-}
-
-.feature:hover{
-    transform:translateY(-4px);
-
-    border-color:
-        rgba(215,173,97,.45);
+    font-size:13px;
 }
 
 /* RESULT */
 
 .result{
     display:none;
-
-    margin-top:28px;
-
-    padding:40px;
-
-    animation:
-        fadeUp
-        .55s
-        ease;
+    margin-top:26px;
+    padding:38px;
 }
 
 .result.show{
     display:block;
+    animation:fadeUp .55s ease;
 }
 
 @keyframes fadeUp{
-
     from{
         opacity:0;
-        transform:translateY(22px);
+        transform:translateY(18px);
     }
-
     to{
         opacity:1;
         transform:none;
@@ -579,319 +348,262 @@ body:after{
 
 .result-header .mini{
     color:var(--gold2);
-
     letter-spacing:4px;
-
     font-size:10px;
 }
 
 .result-header h2{
-    margin-top:13px;
-
+    margin-top:12px;
     font-family:Georgia,serif;
-
-    font-size:32px;
-
+    font-size:clamp(27px,5vw,35px);
     font-weight:500;
 }
 
+.result-header .location{
+    margin-top:8px;
+    color:#777b88;
+    font-size:13px;
+}
+
 .life-number{
-    width:140px;
-    height:140px;
-
-    margin:29px auto;
-
-    border:
-        2px solid
-        var(--gold2);
-
+    width:138px;
+    height:138px;
+    margin:28px auto;
+    border:2px solid var(--gold2);
     border-radius:50%;
-
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     font-family:Georgia,serif;
-
-    font-size:60px;
-
+    font-size:59px;
     color:#f0d18d;
-
     box-shadow:
-        0 0 45px
-        rgba(215,173,97,.13),
-
-        inset 0 0 30px
-        rgba(215,173,97,.05);
+        0 0 40px rgba(215,173,97,.12),
+        inset 0 0 30px rgba(215,173,97,.05);
 }
 
-.result-intro{
+.result-description{
     color:#9a9da8;
-
     line-height:1.75;
-
-    max-width:680px;
-
+    max-width:700px;
     margin:auto;
+    font-size:15px;
 }
-
-/* RESULT GRID */
 
 .result-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:16px;
-
-    margin-top:32px;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:30px;
 }
 
 .result-box{
     padding:23px 15px;
-
     text-align:center;
-
-    border:
-        1px solid
-        rgba(215,173,97,.22);
-
+    border:1px solid rgba(215,173,97,.22);
     border-radius:19px;
+    background:rgba(0,0,0,.20);
+}
 
-    background:
-        rgba(0,0,0,.20);
+.result-box .icon{
+    color:var(--gold2);
+    font-size:21px;
+    margin-bottom:9px;
 }
 
 .result-box strong{
     display:block;
-
-    margin-bottom:8px;
-
-    color:var(--gold2);
-
-    font-size:14px;
+    margin-bottom:7px;
+    color:#e9e3d8;
+    font-size:13px;
 }
 
 .result-box span{
-    color:#b5b7c0;
-
-    font-size:14px;
+    color:var(--gold2);
+    font-size:15px;
+    font-weight:650;
 }
 
-/* INTERPRETATION */
+.details{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:22px;
+}
 
-.interpretation{
-    margin-top:25px;
-
+.detail{
     padding:25px;
-
-    border:
-        1px solid
-        rgba(215,173,97,.18);
-
-    border-radius:22px;
-
-    background:
-        rgba(0,0,0,.16);
+    border:1px solid rgba(215,173,97,.18);
+    border-radius:21px;
+    background:rgba(0,0,0,.17);
 }
 
-.interpretation h3{
-    margin-bottom:12px;
-
-    color:var(--gold2);
-
+.detail h3{
     font-family:Georgia,serif;
-
-    font-size:20px;
-}
-
-.interpretation p{
-    color:#9699a5;
-
-    line-height:1.75;
-
-    font-size:14px;
-}
-
-/* RESET */
-
-.reset-btn{
-    display:block;
-
-    margin:
-        25px
-        auto
-        0;
-
-    padding:
-        12px
-        20px;
-
-    border:
-        1px solid
-        rgba(215,173,97,.35);
-
-    border-radius:50px;
-
-    background:
-        transparent;
-
-    color:#aaa;
-
-    cursor:pointer;
-
-    font-size:13px;
-
-    transition:.25s;
-}
-
-.reset-btn:hover{
     color:var(--gold2);
+    font-size:20px;
+    font-weight:500;
+    margin-bottom:14px;
+}
 
+.detail p{
+    color:#9699a5;
+    font-size:14px;
+    line-height:1.75;
+}
+
+.strengths{
+    margin-top:22px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.strength-card{
+    padding:24px;
+    border-radius:21px;
+    background:rgba(0,0,0,.16);
+    border:1px solid rgba(215,173,97,.18);
+}
+
+.strength-card h3{
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+.strength-card ul{
+    list-style:none;
+}
+
+.strength-card li{
+    color:#9699a5;
+    font-size:13px;
+    padding:8px 0;
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.strength-card li:last-child{
+    border-bottom:0;
+}
+
+.strength-card li:before{
+    content:"✦";
+    color:var(--gold2);
+    margin-right:9px;
+}
+
+.result-actions{
+    display:flex;
+    gap:12px;
+    margin-top:25px;
+}
+
+.action-btn{
+    flex:1;
+    min-height:52px;
+    border-radius:15px;
+    border:1px solid rgba(215,173,97,.30);
+    background:rgba(255,255,255,.025);
+    color:#ddd9d0;
+    font-size:14px;
+    font-weight:650;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.action-btn:hover{
     border-color:var(--gold);
+    color:var(--gold2);
+}
+
+.action-btn.primary{
+    background:linear-gradient(110deg,#d9ad5d,#9d7535);
+    color:#111217;
+    border-color:#e9c579;
 }
 
 /* BOTTOM */
 
 .bottom{
-    margin-top:48px;
-
+    margin-top:45px;
     display:grid;
-
-    grid-template-columns:
-        1fr 310px;
-
+    grid-template-columns:1fr 310px;
     gap:35px;
-
     align-items:center;
 }
 
 .quote{
-    padding:
-        15px
-        10px
-        20px;
+    padding:15px 10px 20px;
 }
 
 .quote-mark{
     font-family:Georgia,serif;
-
     font-size:65px;
-
     line-height:.5;
-
     color:var(--gold2);
 }
 
 .quote-text{
     margin-top:20px;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
+    font-family:Georgia,"Times New Roman",serif;
     font-style:italic;
-
-    font-size:25px;
-
+    font-size:24px;
     line-height:1.65;
-
     color:#c4c5cc;
-
     max-width:600px;
 }
 
 .quote-label{
     margin-top:25px;
-
     padding-top:17px;
-
     width:130px;
-
-    border-top:
-        1px solid
-        var(--gold);
-
+    border-top:1px solid var(--gold);
     color:#999ba5;
-
     font-size:10px;
-
     letter-spacing:5px;
 }
 
-/* SIGNATURE */
-
 .signature{
     text-align:center;
-
     padding:31px 20px;
-
-    border:
-        1px solid
-        var(--gold);
-
+    border:1px solid var(--gold);
     border-radius:25px;
-
-    background:
-        rgba(12,13,19,.72);
-
-    box-shadow:
-        0 20px 55px
-        rgba(0,0,0,.25);
+    background:rgba(12,13,19,.72);
+    box-shadow:0 20px 55px rgba(0,0,0,.25);
 }
 
 .signature .to{
     font-family:Georgia,serif;
-
-    font-size:32px;
-
+    font-size:31px;
     color:#f0d18d;
-
     letter-spacing:3px;
 }
 
 .signature .creator{
     margin-top:14px;
-
     color:#e8e6df;
-
-    font-size:15px;
+    font-size:14px;
 }
 
 .signature .small-line{
     width:45px;
     height:1px;
-
     background:var(--gold);
-
-    margin:
-        19px
-        auto;
+    margin:19px auto;
 }
 
 .signature .copyright{
     color:#8c8e99;
-
-    font-size:13px;
-
+    font-size:12px;
     letter-spacing:1px;
 }
 
-/* FOOTER */
-
 footer{
     text-align:center;
-
-    margin-top:50px;
-
+    margin-top:48px;
     color:#646875;
-
     font-size:11px;
-
-    letter-spacing:.5px;
+    line-height:1.7;
 }
 
 /* MOBILE */
@@ -899,49 +611,40 @@ footer{
 @media(max-width:720px){
 
     .container{
-        width:
-            calc(100% - 20px);
-
-        padding:
-            30px
-            0
-            55px;
+        width:calc(100% - 20px);
+        padding-top:25px;
     }
 
     .hero{
-        padding:
-            15px
-            10px
-            30px;
+        padding:13px 9px 29px;
     }
 
     .badge{
         font-size:9px;
-
         letter-spacing:2.5px;
-
-        padding:
-            10px
-            15px;
+        padding:9px 13px;
     }
 
     .logo{
-        font-size:53px;
-
-        margin-top:25px;
+        font-size:52px;
+        margin-top:23px;
     }
 
     .subtitle{
-        font-size:16px;
-
+        font-size:15px;
         line-height:1.65;
     }
 
-    .form-card{
-        padding:
-            26px
-            18px;
+    .gold-line{
+        width:180px;
+    }
 
+    .gold-line:after{
+        left:88px;
+    }
+
+    .form-card{
+        padding:24px 17px;
         border-radius:25px;
     }
 
@@ -952,44 +655,33 @@ footer{
     .section-icon{
         width:45px;
         height:45px;
-
+        min-width:45px;
         font-size:20px;
     }
 
     .section-title h2{
-        font-size:24px;
+        font-size:22px;
     }
 
     .section-desc{
-        margin-left:0;
-
-        margin-top:12px;
-
-        margin-bottom:25px;
-
+        margin:12px 0 26px;
         font-size:13px;
     }
 
     .grid{
         grid-template-columns:1fr;
-
-        gap:19px;
+        gap:18px;
     }
 
     .field input{
-        height:61px;
-
+        height:60px;
         border-radius:16px;
-
-        font-size:16px;
     }
 
     .solve-btn{
-        height:64px;
-
+        min-height:63px;
         font-size:16px;
-
-        border-radius:17px;
+        margin-top:25px;
     }
 
     .disclaimer{
@@ -998,89 +690,85 @@ footer{
 
     .features{
         grid-template-columns:1fr;
-
-        gap:15px;
+        gap:13px;
     }
 
     .feature{
         min-height:auto;
-
-        padding:24px;
+        padding:23px;
     }
 
     .bottom{
         grid-template-columns:1fr;
-
         gap:25px;
     }
 
     .quote{
-        padding:
-            10px
-            15px;
+        padding:10px 15px;
     }
 
     .quote-text{
-        font-size:21px;
-    }
-
-    .signature{
-        padding:28px 18px;
+        font-size:20px;
     }
 
     .result{
-        padding:
-            28px
-            18px;
-
+        padding:27px 17px;
         border-radius:25px;
     }
 
-    .result-header h2{
-        font-size:26px;
+    .life-number{
+        width:120px;
+        height:120px;
+        font-size:52px;
     }
 
-    .life-number{
-        width:125px;
-        height:125px;
-
-        font-size:54px;
+    .result-description{
+        font-size:14px;
     }
 
     .result-grid{
         grid-template-columns:1fr;
-
-        gap:12px;
+        gap:11px;
     }
 
-    .interpretation{
-        padding:20px;
+    .result-box{
+        display:grid;
+        grid-template-columns:35px 1fr auto;
+        align-items:center;
+        text-align:left;
+        padding:17px;
     }
 
+    .result-box .icon{
+        margin:0;
+    }
+
+    .result-box strong{
+        margin:0;
+    }
+
+    .details,
+    .strengths{
+        grid-template-columns:1fr;
+    }
+
+    .result-actions{
+        flex-direction:column;
+    }
+
+    .action-btn{
+        width:100%;
+    }
 }
 
-/* SMALL PHONES */
-
-@media(max-width:380px){
-
-    .logo{
-        font-size:47px;
+@media(min-width:721px){
+    .feature:hover{
+        transform:translateY(-4px);
+        border-color:rgba(215,173,97,.5);
     }
-
-    .badge{
-        letter-spacing:2px;
-    }
-
-    .container{
-        width:
-            calc(100% - 14px);
-    }
-
 }
-
 </style>
 </head>
-
 
 <body>
 
@@ -1097,8 +785,8 @@ footer{
     </h1>
 
     <p class="subtitle">
-        Doğum tarihin, ismin, doğum saatin ve doğduğun
-        yerden oluşturulan sembolik kişisel profilini keşfet.
+        Doğum tarihin, ismin, doğum saatin ve doğduğun yer
+        üzerinden sembolik kişisel haritanı keşfet.
     </p>
 
     <div class="gold-line"></div>
@@ -1112,133 +800,69 @@ footer{
 
     <div class="section-title">
 
-        <div class="section-icon">
-            ✦
-        </div>
+        <div class="section-icon">♙</div>
 
-        <h2>
-            Kişisel bilgilerin
-        </h2>
+        <h2>Kişisel bilgilerin</h2>
 
     </div>
 
     <p class="section-desc">
-        Sana özel yaşam haritanı oluşturmak için temel bilgilerini gir.
+        Sana özel sembolik yaşam haritasını oluşturmak için bilgilerini gir.
     </p>
 
 
     <div class="grid">
 
         <div class="field">
-
-            <label for="name">
-                Adın
-            </label>
-
-            <input
-                id="name"
-                type="text"
-                placeholder="Örn. Taner"
-                autocomplete="given-name"
-            >
-
+            <label for="name">Adın</label>
+            <input id="name" type="text" autocomplete="given-name"
+                   placeholder="Örn. Taner">
         </div>
 
-
         <div class="field">
-
-            <label for="surname">
-                Soyadın
-            </label>
-
-            <input
-                id="surname"
-                type="text"
-                placeholder="Örn. Öztürk"
-                autocomplete="family-name"
-            >
-
+            <label for="surname">Soyadın</label>
+            <input id="surname" type="text" autocomplete="family-name"
+                   placeholder="Örn. Öztürk">
         </div>
 
-
         <div class="field">
-
-            <label for="birth">
-                Doğum tarihin
-            </label>
-
-            <input
-                id="birth"
-                type="date"
-            >
-
+            <label for="birth">Doğum tarihin</label>
+            <input id="birth" type="date">
         </div>
 
-
         <div class="field">
-
-            <label for="time">
-                Doğum saatin
-            </label>
-
-            <input
-                id="time"
-                type="time"
-            >
-
+            <label for="time">Doğum saatin</label>
+            <input id="time" type="time">
         </div>
 
-
         <div class="field">
-
-            <label for="city">
-                Doğduğun il
-            </label>
-
-            <input
-                id="city"
-                type="text"
-                placeholder="Örn. Kahramanmaraş"
-            >
-
+            <label for="city">Doğduğun il</label>
+            <input id="city" type="text"
+                   placeholder="Örn. Kahramanmaraş">
         </div>
 
-
         <div class="field">
-
-            <label for="district">
-                Doğduğun ilçe
-            </label>
-
-            <input
-                id="district"
-                type="text"
-                placeholder="Örn. Dulkadiroğlu"
-            >
-
+            <label for="district">Doğduğun ilçe</label>
+            <input id="district" type="text"
+                   placeholder="Örn. Dulkadiroğlu">
         </div>
 
     </div>
 
 
-    <button
-        class="solve-btn"
-        onclick="solve()"
-    >
+    <button class="solve-btn" onclick="solve()">
         HAYAT KODUMU ÇÖZ &nbsp; →
     </button>
 
 
     <div class="disclaimer">
 
-        <div class="info">
-            i
-        </div>
+        <div class="info">i</div>
 
         <div>
-            Bu uygulama numerolojiyi bilimsel bir kişilik veya
-            gelecek tahmini olarak sunmaz. Sonuçlar sembolik
-            öz-refleksiyon ve kişisel gelişim amacıyla hazırlanır.
+            Bu deneyim numerolojiyi bilimsel bir kişilik veya gelecek
+            tahmini olarak sunmaz. Sonuçlar sembolik öz-refleksiyon
+            ve kişisel gelişim amacıyla hazırlanır.
         </div>
 
     </div>
@@ -1246,10 +870,7 @@ footer{
 </section>
 
 
-<section
-    id="result"
-    class="card result"
->
+<section id="result" class="card result">
 
     <div class="result-header">
 
@@ -1261,17 +882,13 @@ footer{
             Hayat haritan
         </h2>
 
-        <div
-            class="life-number"
-            id="lifeNumber"
-        >
+        <div class="location" id="locationText"></div>
+
+        <div class="life-number" id="lifeNumber">
             —
         </div>
 
-        <p
-            class="result-intro"
-            id="resultText"
-        >
+        <p class="result-description" id="resultText">
             Sonuçların burada görünecek.
         </p>
 
@@ -1281,66 +898,89 @@ footer{
     <div class="result-grid">
 
         <div class="result-box">
+            <div class="icon">∞</div>
+            <strong>Yaşam Yolu</strong>
+            <span id="lifeBox">—</span>
+        </div>
 
-            <strong>
-                Yaşam Yolu
-            </strong>
+        <div class="result-box">
+            <div class="icon">✦</div>
+            <strong>İsim Enerjisi</strong>
+            <span id="nameBox">—</span>
+        </div>
 
-            <span id="lifeBox">
+        <div class="result-box">
+            <div class="icon">◇</div>
+            <strong>Doğum Günü</strong>
+            <span id="dayBox">—</span>
+        </div>
+
+    </div>
+
+
+    <div class="details">
+
+        <div class="detail">
+
+            <h3>✦ Temel enerjin</h3>
+
+            <p id="coreText">
                 —
-            </span>
+            </p>
 
         </div>
 
 
-        <div class="result-box">
+        <div class="detail">
 
-            <strong>
-                İsim Enerjisi
-            </strong>
+            <h3>◈ Hayat teması</h3>
 
-            <span id="nameBox">
+            <p id="themeText">
                 —
-            </span>
-
-        </div>
-
-
-        <div class="result-box">
-
-            <strong>
-                Doğum Günü
-            </strong>
-
-            <span id="dayBox">
-                —
-            </span>
+            </p>
 
         </div>
 
     </div>
 
 
-    <div class="interpretation">
+    <div class="strengths">
 
-        <h3>
-            ✦ Hayat Kodunun Mesajı
-        </h3>
+        <div class="strength-card">
 
-        <p id="meaningText">
-            Analiz tamamlandığında burada sana özel
-            sembolik yorumun görünecek.
-        </p>
+            <h3>Güçlü tarafların</h3>
+
+            <ul id="strengthList"></ul>
+
+        </div>
+
+
+        <div class="strength-card">
+
+            <h3>Dikkat edilmesi gerekenler</h3>
+
+            <ul id="challengeList"></ul>
+
+        </div>
 
     </div>
 
 
-    <button
-        class="reset-btn"
-        onclick="newAnalysis()"
-    >
-        ↻ Yeni analiz yap
-    </button>
+    <div class="result-actions">
+
+        <button class="action-btn primary" onclick="copyResult()">
+            📋 Sonucu Kopyala
+        </button>
+
+        <button class="action-btn" onclick="shareResult()">
+            📤 Paylaş
+        </button>
+
+        <button class="action-btn" onclick="resetForm()">
+            ↺ Yeniden Hesapla
+        </button>
+
+    </div>
 
 </section>
 
@@ -1349,16 +989,12 @@ footer{
 
     <div class="feature card">
 
-        <div class="feature-icon">
-            ◈
-        </div>
+        <div class="feature-icon">▥</div>
 
-        <h3>
-            Kendini Anla
-        </h3>
+        <h3>Kendini Anla</h3>
 
         <p>
-            Doğal yönlerini ve karakter eğilimlerini keşfet.
+            Doğal yönlerini ve eğilimlerini keşfet.
         </p>
 
     </div>
@@ -1366,16 +1002,12 @@ footer{
 
     <div class="feature card">
 
-        <div class="feature-icon">
-            ✦
-        </div>
+        <div class="feature-icon">◈</div>
 
-        <h3>
-            Potansiyelini Gör
-        </h3>
+        <h3>Potansiyelini Gör</h3>
 
         <p>
-            Güçlü taraflarını fark ederek kendine yeni bir bakış kazan.
+            Güçlü taraflarını fark et.
         </p>
 
     </div>
@@ -1383,16 +1015,12 @@ footer{
 
     <div class="feature card">
 
-        <div class="feature-icon">
-            ♡
-        </div>
+        <div class="feature-icon">♡</div>
 
-        <h3>
-            Daha Bilinçli Yaşa
-        </h3>
+        <h3>Daha Bilinçli Yaşa</h3>
 
         <p>
-            Kendi yolunu oluştururken sembolik bir rehberden yararlan.
+            Kendi yolunu daha bilinçli oluştur.
         </p>
 
     </div>
@@ -1404,9 +1032,7 @@ footer{
 
     <div class="quote">
 
-        <div class="quote-mark">
-            “
-        </div>
+        <div class="quote-mark">“</div>
 
         <div class="quote-text">
             Kendini tanımak,<br>
@@ -1444,7 +1070,8 @@ footer{
 
 
 <footer>
-    HAYAT KODU · Sembolik öz-refleksiyon deneyimi
+    HAYAT KODU · Sembolik öz-refleksiyon deneyimi<br>
+    Kendini keşfetmek için tasarlanmıştır.
 </footer>
 
 </div>
@@ -1453,7 +1080,7 @@ footer{
 <script>
 
 /* =========================
-   NUMEROLOJİ MOTORU
+   SAYI HESAPLAMA
 ========================= */
 
 function reduceNumber(number){
@@ -1480,78 +1107,34 @@ function reduceNumber(number){
 }
 
 
-/* =========================
-   YAŞAM YOLU
-========================= */
-
 function dateLifeNumber(date){
 
-    let numbers =
-        date.replaceAll("-","");
+    const numbers = date.replaceAll("-","");
 
     let total = 0;
 
-    for(
-        let i = 0;
-        i < numbers.length;
-        i++
-    ){
-
+    for(let i = 0; i < numbers.length; i++){
         total += Number(numbers[i]);
-
     }
 
     return reduceNumber(total);
 }
 
 
-/* =========================
-   İSİM SAYISI
-========================= */
+const values = {
+
+    "A":1,"B":2,"C":3,"Ç":3,"D":4,
+    "E":5,"F":6,"G":7,"Ğ":7,"H":8,
+    "I":9,"İ":9,"J":1,"K":2,"L":3,
+    "M":4,"N":5,"O":6,"Ö":6,"P":7,
+    "Q":8,"R":9,"S":1,"Ş":1,"T":2,
+    "U":3,"Ü":3,"V":4,"W":5,"X":6,
+    "Y":7,"Z":8
+
+};
+
 
 function nameNumber(name){
-
-    const values = {
-
-        "A":1,
-        "B":2,
-        "C":3,
-        "Ç":3,
-        "D":4,
-
-        "E":5,
-        "F":6,
-        "G":7,
-        "Ğ":7,
-        "H":8,
-
-        "I":9,
-        "İ":9,
-        "J":1,
-        "K":2,
-        "L":3,
-
-        "M":4,
-        "N":5,
-        "O":6,
-        "Ö":6,
-        "P":7,
-
-        "Q":8,
-        "R":9,
-        "S":1,
-        "Ş":1,
-        "T":2,
-
-        "U":3,
-        "Ü":3,
-        "V":4,
-        "W":5,
-        "X":6,
-
-        "Y":7,
-        "Z":8
-    };
 
     let total = 0;
 
@@ -1571,283 +1154,251 @@ function nameNumber(name){
 
 
 /* =========================
-   SAYI ANLAMLARI
+   ANLAMLAR
 ========================= */
 
-function meaning(number){
+const meanings = {
 
-    const meanings = {
+1:{
+    title:"Bağımsızlık ve başlangıç",
+    text:"Kendi yolunu açma, karar alma ve harekete geçme teması öne çıkar. Başkalarının yönlendirmesinden çok kendi iradene güvenme eğilimin güçlü olabilir.",
+    strengths:["Liderlik","Kararlılık","Girişimcilik","Özgüven"],
+    challenges:["Sabırsızlık","Fazla kontrol","Her şeyi tek başına yapma eğilimi"]
+},
 
-        1:
-        "Bağımsızlık, liderlik ve kendi yolunu açma enerjisini temsil eder. Başlatıcı olmak, karar almak ve kendi ayaklarının üzerinde durmak önemli temalardır.",
+2:{
+    title:"Uyum ve sezgi",
+    text:"İlişkiler, iş birliği ve denge senin sembolik haritanda önemli temalar taşır. İnsanların duygularını fark etme ve ortamın enerjisini sezme eğilimin öne çıkabilir.",
+    strengths:["Empati","Sezgi","Diplomasi","Uyum"],
+    challenges:["Fazla hassasiyet","Kararsızlık","Başkalarının düşüncelerine fazla önem verme"]
+},
 
-        2:
-        "Uyum, sezgi, iş birliği ve ilişkiler ön plandadır. İnsanları anlamak ve dengeli bağlar kurmak güçlü taraflardan biri olabilir.",
+3:{
+    title:"İfade ve yaratıcılık",
+    text:"Kendini ifade etmek, iletişim kurmak ve yaratıcı yönünü kullanmak hayat temasının önemli parçaları olabilir.",
+    strengths:["İletişim","Yaratıcılık","Neşe","Sosyal zeka"],
+    challenges:["Dağınıklık","Erteleme","Duyguları fazla dışa vurma"]
+},
 
-        3:
-        "Yaratıcılık, iletişim ve kendini ifade etme enerjisidir. Konuşmak, üretmek, anlatmak ve çevreye neşe katmak önemli temalar olabilir.",
+4:{
+    title:"Düzen ve sağlamlık",
+    text:"Kalıcı sonuçlar oluşturmak, düzen kurmak ve güvenli temeller oluşturmak öne çıkar. Sabırla ilerlediğinde güçlü yapılar kurabilirsin.",
+    strengths:["Disiplin","Sorumluluk","Planlama","Güvenilirlik"],
+    challenges:["Katılık","Fazla kontrol","Değişime direnç"]
+},
 
-        4:
-        "Düzen, disiplin, güven ve sağlam temeller oluşturma enerjisidir. Sabırla ilerlemek ve kalıcı işler ortaya koymak öne çıkar.",
+5:{
+    title:"Özgürlük ve değişim",
+    text:"Yeni deneyimler, hareket ve keşif güçlü temalar olabilir. Tekdüzelik yerine gelişim ve çeşitlilik seni daha fazla besleyebilir.",
+    strengths:["Uyum sağlama","Merak","Cesaret","Esneklik"],
+    challenges:["Sabırsızlık","Dağılma","Karar değiştirme"]
+},
 
-        5:
-        "Özgürlük, değişim, merak ve deneyim enerjisidir. Tekdüzelikten uzaklaşma ve yeni şeyler keşfetme isteği güçlü olabilir.",
+6:{
+    title:"Sevgi ve sorumluluk",
+    text:"Aile, yakın ilişkiler, koruyuculuk ve sorumluluk duygusu güçlü temalar taşır. İnsanlara destek olma isteğin belirgin olabilir.",
+    strengths:["Şefkat","Sadakat","Sorumluluk","Koruyuculuk"],
+    challenges:["Fazla yük alma","Mükemmeliyetçilik","Kendini ihmal etme"]
+},
 
-        6:
-        "Sorumluluk, sevgi, aile ve koruyuculuk enerjisidir. Yakın çevreye destek olmak ve güven veren ilişkiler kurmak önem kazanabilir.",
+7:{
+    title:"Derinlik ve keşif",
+    text:"Araştırmak, anlamlandırmak ve olayların görünen yüzünün ötesine bakmak önemli olabilir. Yalnız kalıp düşünmek sana iyi gelebilir.",
+    strengths:["Analiz","Sezgi","Araştırma","Derin düşünce"],
+    challenges:["İçe kapanma","Aşırı düşünme","Mesafe koyma"]
+},
 
-        7:
-        "Derin düşünce, araştırma, sezgi ve içsel keşif enerjisidir. Olayların görünen yüzünden fazlasını anlamaya yönelik güçlü bir merak vardır.",
+8:{
+    title:"Güç ve hedef",
+    text:"Hedef belirleme, yönetme, sonuç alma ve maddi dünyada somut başarı oluşturma temaları öne çıkar.",
+    strengths:["Yönetim","Hedef odaklılık","Dayanıklılık","Strateji"],
+    challenges:["Aşırı hırs","Kontrolcülük","İş-yaşam dengesizliği"]
+},
 
-        8:
-        "Güç, hedef, yönetim ve maddi dünyada başarı enerjisidir. Organizasyon, sorumluluk ve somut sonuç alma konuları öne çıkabilir.",
+9:{
+    title:"Empati ve tamamlanma",
+    text:"Büyük resme bakmak, insanlara katkı sağlamak ve deneyimlerden anlam çıkarmak güçlü temalar olabilir.",
+    strengths:["Empati","İdealizm","Cömertlik","Vizyon"],
+    challenges:["Geçmişe tutunma","Fazla fedakarlık","Duygusal yük"]
+},
 
-        9:
-        "Empati, idealizm, tamamlanma ve insanlara katkı enerjisidir. Daha büyük bir anlam arayışı ve başkalarına fayda sağlama isteği görülebilir.",
+11:{
+    title:"Sezgi ve ilham",
+    text:"Numerolojide özel kabul edilen 11, güçlü sezgi, ilham ve farkındalık temalarıyla ilişkilendirilir. Hassasiyet ve içgörü birlikte çalışabilir.",
+    strengths:["Sezgi","İlham","Vizyon","Farkındalık"],
+    challenges:["Aşırı hassasiyet","Zihinsel yoğunluk","Kaygıya açık olma"]
+},
 
-        11:
-        "Güçlü sezgi, ilham ve yüksek farkındalıkla ilişkilendirilen özel bir sayıdır. Fikirler ve sezgiler yoğun olabilir.",
+22:{
+    title:"Büyük fikirleri gerçekleştirmek",
+    text:"22, sembolik olarak büyük fikirleri somutlaştırma ve uzun vadeli yapılar kurma temasıyla ilişkilendirilir.",
+    strengths:["Organizasyon","Vizyon","Sabır","Gerçekleştirme gücü"],
+    challenges:["Aşırı sorumluluk","Baskı hissetme","Mükemmeliyetçilik"]
+},
 
-        22:
-        "Büyük fikirleri somutlaştırma ve uzun vadeli yapılar kurma enerjisidir. Hayalleri planlı biçimde gerçeğe dönüştürme teması öne çıkar.",
-
-        33:
-        "Şefkat, öğreticilik ve başkalarına ilham verme enerjisidir. Bilgiyi ve deneyimi başkalarının gelişimine aktarma teması güçlüdür."
-
-    };
-
-    return meanings[number]
-        ||
-        "Kişisel gelişim, farkındalık ve keşif enerjisi.";
+33:{
+    title:"Şefkat ve öğreticilik",
+    text:"33, sembolik olarak şefkat, öğreticilik ve başkalarına ilham verme temalarıyla ilişkilendirilir.",
+    strengths:["Şefkat","Öğreticilik","İlham","Fedakarlık"],
+    challenges:["Kendini fazla verme","Duygusal yük","Başkalarını kurtarma isteği"]
 }
+
+};
 
 
 /* =========================
-   TARİH KONTROLÜ
-========================= */
-
-function validDate(date){
-
-    if(!date){
-        return false;
-    }
-
-    const d =
-        new Date(date + "T00:00:00");
-
-    return !isNaN(d.getTime());
-}
-
-
-/* =========================
-   ANALİZ
+   ÇÖZ
 ========================= */
 
 function solve(){
 
     const name =
-        document
-        .getElementById("name")
-        .value
-        .trim();
+        document.getElementById("name").value.trim();
 
     const surname =
-        document
-        .getElementById("surname")
-        .value
-        .trim();
+        document.getElementById("surname").value.trim();
 
     const birth =
-        document
-        .getElementById("birth")
-        .value;
+        document.getElementById("birth").value;
 
     const time =
-        document
-        .getElementById("time")
-        .value;
+        document.getElementById("time").value;
 
     const city =
-        document
-        .getElementById("city")
-        .value
-        .trim();
+        document.getElementById("city").value.trim();
 
     const district =
-        document
-        .getElementById("district")
-        .value
-        .trim();
+        document.getElementById("district").value.trim();
 
 
-    if(!name){
+    if(!name || !birth){
 
-        alert(
-            "Önce adını yazmalısın."
-        );
+        alert("Lütfen adını ve doğum tarihini gir.");
 
         return;
     }
 
-
-    if(!validDate(birth)){
-
-        alert(
-            "Lütfen doğum tarihini seç."
-        );
-
-        return;
-    }
-
-
-    /* SAYILARI HESAPLA */
 
     const life =
         dateLifeNumber(birth);
 
-
     const fullName =
         name + " " + surname;
-
 
     const nameEnergy =
         nameNumber(fullName);
 
-
     const date =
-        new Date(
-            birth + "T00:00:00"
-        );
-
+        new Date(birth + "T00:00:00");
 
     const day =
-        reduceNumber(
-            date.getDate()
-        );
+        reduceNumber(date.getDate());
 
 
-    /* EKRANA AKTAR */
-
-    document
-        .getElementById("lifeNumber")
-        .textContent = life;
+    const data =
+        meanings[life] || meanings[1];
 
 
-    document
-        .getElementById("lifeBox")
-        .textContent = life;
+    document.getElementById("lifeNumber").textContent =
+        life;
+
+    document.getElementById("lifeBox").textContent =
+        life;
+
+    document.getElementById("nameBox").textContent =
+        nameEnergy;
+
+    document.getElementById("dayBox").textContent =
+        day;
 
 
-    document
-        .getElementById("nameBox")
-        .textContent = nameEnergy;
+    document.getElementById("resultTitle").textContent =
+        name + " için sembolik haritan";
 
 
-    document
-        .getElementById("dayBox")
-        .textContent = day;
+    document.getElementById("resultText").textContent =
+        data.text;
 
 
-    document
-        .getElementById("resultTitle")
-        .textContent =
-        name +
-        " için sembolik haritan";
+    document.getElementById("coreText").textContent =
+        data.title + ". " + data.text;
 
 
-    document
-        .getElementById("resultText")
-        .textContent =
-        meaning(life);
+    document.getElementById("themeText").textContent =
+        "Hayatında " + data.title.toLowerCase() +
+        " temasını fark etmek, güçlü taraflarını bilinçli kullanmak " +
+        "ve dengeyi korumak kişisel gelişim açısından anlamlı olabilir.";
 
 
-    /* DETAYLI MESAJ */
+    const strengthList =
+        document.getElementById("strengthList");
 
-    let locationText = "";
+    strengthList.innerHTML = "";
 
-    if(city){
+    data.strengths.forEach(function(item){
 
-        locationText =
+        const li =
+            document.createElement("li");
+
+        li.textContent = item;
+
+        strengthList.appendChild(li);
+
+    });
+
+
+    const challengeList =
+        document.getElementById("challengeList");
+
+    challengeList.innerHTML = "";
+
+    data.challenges.forEach(function(item){
+
+        const li =
+            document.createElement("li");
+
+        li.textContent = item;
+
+        challengeList.appendChild(li);
+
+    });
+
+
+    let location = "";
+
+    if(city && district){
+
+        location =
+            "Doğum yeri: " +
+            district +
+            " / " +
             city;
 
-        if(district){
-            locationText +=
-                " / " +
-                district;
-        }
+    }else if(city){
+
+        location =
+            "Doğum yeri: " +
+            city;
 
     }
-
-
-    let extraText =
-        "Yaşam yolu sayın " +
-        life +
-        " olarak hesaplandı. " +
-        "İsim enerjin " +
-        nameEnergy +
-        " ve doğum günü enerjin " +
-        day +
-        " olarak ortaya çıkıyor.";
 
 
     if(time){
 
-        extraText +=
-            " Doğum saatin " +
-            time +
-            " olduğu için kişisel profilinde zaman bilgisi de dikkate alındı.";
+        location +=
+            (location ? " · " : "") +
+            "Saat: " +
+            time;
 
     }
 
 
-    if(locationText){
+    document.getElementById("locationText").textContent =
+        location;
 
-        extraText +=
-            " Doğum yerin: " +
-            locationText +
-            ".";
-
-    }
-
-
-    document
-        .getElementById("meaningText")
-        .textContent =
-        extraText +
-        " Bu sonuçlar bilimsel bir kişilik testi değil, kendini düşünmek ve farklı yönlerini keşfetmek için sembolik bir rehber olarak değerlendirilmelidir.";
-
-
-    /* KAYDET */
-
-    const data = {
-
-        name:name,
-
-        surname:surname,
-
-        birth:birth,
-
-        time:time,
-
-        city:city,
-
-        district:district
-
-    };
-
-
-    localStorage.setItem(
-        "hayatKoduData",
-        JSON.stringify(data)
-    );
-
-
-    /* GÖSTER */
 
     const result =
-        document
-        .getElementById("result");
-
+        document.getElementById("result");
 
     result.classList.add("show");
 
@@ -1865,15 +1416,107 @@ function solve(){
 
 
 /* =========================
-   YENİ ANALİZ
+   SONUCU KOPYALA
 ========================= */
 
-function newAnalysis(){
+function getResultText(){
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const life =
+        document.getElementById("lifeBox").textContent;
+
+    const nameEnergy =
+        document.getElementById("nameBox").textContent;
+
+    const day =
+        document.getElementById("dayBox").textContent;
+
+    const description =
+        document.getElementById("resultText").textContent;
+
+    return (
+        "HAYAT KODU\n\n" +
+        name + " için sembolik harita\n\n" +
+        "Yaşam Yolu: " + life + "\n" +
+        "İsim Enerjisi: " + nameEnergy + "\n" +
+        "Doğum Günü: " + day + "\n\n" +
+        description +
+        "\n\n© 2026 Taner Öztürk"
+    );
+}
+
+
+async function copyResult(){
+
+    const text =
+        getResultText();
+
+    try{
+
+        await navigator.clipboard.writeText(text);
+
+        alert("Sonuç panoya kopyalandı ✦");
+
+    }catch(error){
+
+        alert("Sonuç kopyalanamadı.");
+
+    }
+
+}
+
+
+/* =========================
+   PAYLAŞ
+========================= */
+
+async function shareResult(){
+
+    const text =
+        getResultText();
+
+    if(navigator.share){
+
+        try{
+
+            await navigator.share({
+                title:"Hayat Kodu",
+                text:text
+            });
+
+        }catch(error){
+
+            /* Kullanıcı paylaşımı iptal ettiyse sessiz kal */
+
+        }
+
+    }else{
+
+        copyResult();
+
+    }
+
+}
+
+
+/* =========================
+   SIFIRLA
+========================= */
+
+function resetForm(){
+
+    document.getElementById("name").value = "";
+    document.getElementById("surname").value = "";
+    document.getElementById("birth").value = "";
+    document.getElementById("time").value = "";
+    document.getElementById("city").value = "";
+    document.getElementById("district").value = "";
 
     document
         .getElementById("result")
         .classList.remove("show");
-
 
     window.scrollTo({
         top:0,
@@ -1883,79 +1526,19 @@ function newAnalysis(){
 }
 
 
-/* =========================
-   KAYITLI BİLGİLERİ YÜKLE
-========================= */
+/* ENTER İLE ÇALIŞSIN */
 
-window.addEventListener(
-    "DOMContentLoaded",
-    function(){
+document.querySelectorAll("input").forEach(function(input){
 
-        try{
+    input.addEventListener("keydown",function(event){
 
-            const saved =
-                localStorage.getItem(
-                    "hayatKoduData"
-                );
-
-
-            if(!saved){
-                return;
-            }
-
-
-            const data =
-                JSON.parse(saved);
-
-
-            document
-                .getElementById("name")
-                .value =
-                data.name || "";
-
-
-            document
-                .getElementById("surname")
-                .value =
-                data.surname || "";
-
-
-            document
-                .getElementById("birth")
-                .value =
-                data.birth || "";
-
-
-            document
-                .getElementById("time")
-                .value =
-                data.time || "";
-
-
-            document
-                .getElementById("city")
-                .value =
-                data.city || "";
-
-
-            document
-                .getElementById("district")
-                .value =
-                data.district || "";
-
+        if(event.key === "Enter"){
+            solve();
         }
 
-        catch(error){
+    });
 
-            console.log(
-                "Kayıt yüklenemedi.",
-                error
-            );
-
-        }
-
-    }
-);
+});
 
 </script>
 
