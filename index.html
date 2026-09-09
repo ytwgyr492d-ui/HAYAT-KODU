@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090a10">
+<link rel="manifest" href="manifest.json">
+<title>Hayat Kodu</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#090a10;color:#f5f5f7;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif}main{max-width:680px;margin:auto;padding:28px 18px 45px}.badge{display:inline-block;border:1px solid #444;border-radius:999px;padding:7px 12px;color:#aaa;font-size:12px;font-weight:700;letter-spacing:.4px}h1{font-size:44px;line-height:1;margin:14px 0 10px}.sub{color:#aaa;line-height:1.5}.card{background:#15161d;border:1px solid #262832;border-radius:22px;padding:18px;margin:14px 0}label{display:block;color:#aaa;font-size:13px;margin-bottom:8px}input{width:100%;padding:14px;border-radius:14px;border:1px solid #3a3c48;background:#0d0e14;color:white;font-size:17px}button{width:100%;border:0;border-radius:16px;padding:16px;font-size:16px;font-weight:800;margin-top:12px;background:#fff;color:#090a10}.num{font-size:62px;font-weight:900;margin:0}.muted{color:#aaa}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{background:#15161d;border:1px solid #262832;border-radius:18px;padding:15px}.stat b{font-size:25px}.section h2{font-size:20px;margin:22px 0 8px}.hidden{display:none}.small{font-size:12px;color:#777;line-height:1.45}
+</style>
+</head>
+<body>
+<main>
+<div class="badge">KİŞİSEL NUMEROLOJİ REHBERİ</div>
+<h1>HAYAT KODU</h1>
+<p class="sub">Doğum tarihindeki sayı örüntülerini sembolik bir kişisel gelişim haritasına dönüştür.</p>
+
+<section id="form" class="card">
+<label>Doğum tarihin</label>
+<input id="date" type="date" value="2000-02-14">
+<button onclick="solve()">KODUMU ÇÖZ ✦</button>
+<p class="small">Numeroloji bilimsel bir kişilik veya gelecek tahmini yöntemi değildir; sonuçlar öz-refleksiyon amaçlıdır.</p>
+</section>
+
+<section id="result" class="hidden">
+<div class="card"><div class="muted">YAŞAM YOLUN</div><p class="num" id="life"></p><h2 id="headline"></h2><p class="muted" id="summary"></p></div>
+<div class="grid" id="stats"></div>
+<div class="section"><h2>🧠 Kişilik kodu</h2><div class="card" id="personality"></div></div>
+<div class="section"><h2>🎯 Ruh amacı</h2><div class="card" id="mission"></div></div>
+<div class="section"><h2>💼 Kariyer</h2><div class="card" id="career"></div></div>
+<div class="section"><h2>❤️ İlişkiler</h2><div class="card">Sana iyi gelen ilişkilerde karşılıklı saygı, açık iletişim ve kişisel alan önemli. Partnerini potansiyeline göre değil, bugünkü davranışlarına göre değerlendirmek sağlıklı bir pusula olabilir.</div></div>
+<div class="section"><h2>💰 Para</h2><div class="card">Yüksek değerli bir beceri geliştir → geliri artır → düzenli sermaye biriktir → uzun vadeli ve çeşitlendirilmiş varlıklarla özgürlük alanı oluştur.</div></div>
+<div class="section"><h2>🗺️ 5 yıllık yol haritası</h2><div id="years"></div></div>
+<button onclick="location.reload()">YENİ TARİH ANALİZ ET</button>
+</section>
+</main>
+<script>
+const P={
+1:["Öncü ve başlatıcı","Bağımsızlık, inisiyatif ve kendi yolunu açma teması baskın.","Kendi kararlarının sorumluluğunu alıp yeni bir şey başlatmak.",["Girişimcilik","Liderlik","Yönetim"]],
+2:["Sezgisel ve bağ kuran","İnsanları, ilişkileri ve ortamın duygusal tonunu okumaya yatkın.","İnsanlar arasında köprü kurmak ve işbirliğini güçlendirmek.",["İletişim","Danışmanlık","İnsan yönetimi"]],
+3:["Yaratıcı anlatıcı","İfade, merak ve fikirleri görünür hale getirme öne çıkar.","Düşünceleri insanlara anlaşılır ve etkili biçimde aktarmak.",["Medya","Eğitim","Pazarlama"]],
+4:["Kurucu ve sistemci","Düzen, güvenilirlik ve somut sonuç alma eğilimi güçlü.","Kalıcı ve sağlam sistemler kurmak.",["Operasyon","Mühendislik","Finans"]],
+5:["Özgür kaşif","Değişim, deneyim ve hareket seni besler; tekdüzelik çabuk sıkabilir.","Deneyimleri bilgiye ve fırsata dönüştürmek.",["Satış","Girişimcilik","Medya"]],
+6:["Sorumlu koruyucu","İnsanlara fayda sağlama, düzen ve sorumluluk öne çıkar.","Güvenli ve daha iyi çalışan çevreler oluşturmak.",["Yönetim","Eğitim","İnsan odaklı hizmetler"]],
+7:["Araştırmacı","Derinlik, analiz ve anlam arayışı güçlüdür.","Karmaşık şeyleri anlayıp gerçeğe yaklaşmak.",["Araştırma","Teknoloji","Analiz"]],
+8:["Stratejist ve yönetici","Sonuç, güç, kaynak ve ölçekleme konularına yatkınlık.","Kaynakları etkili yönetip büyük sonuçlar üretmek.",["Finans","Yönetim","İş geliştirme"]],
+9:["Anlam ve etki arayan","Büyük resmi görme, idealizm ve başkalarına fayda sağlama teması belirgin.","Kendi deneyimini ve yeteneğini başkalarının hayatında gerçek değere dönüştürmek.",["Liderlik","Eğitim/danışmanlık","Sosyal etki/girişim"]]
+};
+function red(n){while(n>9&&n!==11&&n!==22&&n!==33)n=String(n).split("").reduce((a,b)=>a+ +b,0);return n}
+function solve(){
+ let d=document.getElementById("date").value;if(!d)return;
+ let [y,m,day]=d.split("-").map(Number),life=red(y+m+day),p=P[life]||P[9];
+ document.getElementById("form").classList.add("hidden");document.getElementById("result").classList.remove("hidden");
+ document.getElementById("life").textContent=life;document.getElementById("headline").textContent=p[0];document.getElementById("summary").textContent=p[1];
+ let age=new Date().getFullYear()-y-(new Date()<new Date(new Date().getFullYear(),m-1,day)?1:0);
+ document.getElementById("stats").innerHTML=`<div class="stat"><b>${red(day)}</b><br><span class="muted">Doğum günü</span></div><div class="stat"><b>${red(m)}</b><br><span class="muted">Ay enerjisi</span></div><div class="stat"><b>${red(y)}</b><br><span class="muted">Yıl enerjisi</span></div><div class="stat"><b>${age}</b><br><span class="muted">Yaş</span></div>`;
+ document.getElementById("personality").textContent=p[1]+" Gölge tarafında aşırı düşünme veya kendi ihtiyacını ikinci plana atma görülebilir; bunu kesin teşhis değil, düşünme teması olarak ele al.";
+ document.getElementById("mission").textContent=p[2];
+ document.getElementById("career").innerHTML="<b>Güçlü alanlar</b><br>• "+p[3].join("<br>• ");
+ let now=new Date().getFullYear();let themes=["Yön seç ve azalt","Beceriye yatırım yap","Geliri çeşitlendir","Sistem kur ve ölçekle","Etkiyi büyüt"];
+ document.getElementById("years").innerHTML=themes.map((t,i)=>`<div class="card"><b>${now+i} — ${t}</b><p class="muted">${["Dağınık hedefleri azaltıp tek ana yön belirle.","Bir yüksek değerli beceriyi ölçülebilir seviyeye taşı.","Beceriyi gelire çevir ve düzenli sermaye biriktir.","Otomasyon, yatırım, network ve süreçler kur.","Liderlik, girişim veya uzmanlık alanında ölçeği büyüt."][i]}</p></div>`).join("");
+}
+if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body></html>
