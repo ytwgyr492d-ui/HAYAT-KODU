@@ -1,1 +1,24 @@
-{"name":"Hayat Kodu","short_name":"Hayat Kodu","start_url":".","display":"standalone","background_color":"#090a10","theme_color":"#090a10","icons":[],"description":"Kişisel numeroloji rehberi"}
+{
+  "name": "Hayat Kodu",
+  "short_name": "Hayat Kodu",
+  "description": "Kendini keşfet. Farkını anla.",
+  "lang": "tr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#05060a",
+  "theme_color": "#d7ad61",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
