@@ -4,63 +4,900 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#090a10">
-<link rel="manifest" href="manifest.json">
 <title>Hayat Kodu</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;background:#090a10;color:#f5f5f7;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif}main{max-width:680px;margin:auto;padding:28px 18px 45px}.badge{display:inline-block;border:1px solid #444;border-radius:999px;padding:7px 12px;color:#aaa;font-size:12px;font-weight:700;letter-spacing:.4px}h1{font-size:44px;line-height:1;margin:14px 0 10px}.sub{color:#aaa;line-height:1.5}.card{background:#15161d;border:1px solid #262832;border-radius:22px;padding:18px;margin:14px 0}label{display:block;color:#aaa;font-size:13px;margin-bottom:8px}input{width:100%;padding:14px;border-radius:14px;border:1px solid #3a3c48;background:#0d0e14;color:white;font-size:17px}button{width:100%;border:0;border-radius:16px;padding:16px;font-size:16px;font-weight:800;margin-top:12px;background:#fff;color:#090a10}.num{font-size:62px;font-weight:900;margin:0}.muted{color:#aaa}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{background:#15161d;border:1px solid #262832;border-radius:18px;padding:15px}.stat b{font-size:25px}.section h2{font-size:20px;margin:22px 0 8px}.hidden{display:none}.small{font-size:12px;color:#777;line-height:1.45}
+*{box-sizing:border-box}
+
+body{
+margin:0;
+background:#090a10;
+color:#f5f5f7;
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif;
+}
+
+main{
+max-width:700px;
+margin:auto;
+padding:30px 18px 60px;
+}
+
+.badge{
+display:inline-block;
+border:1px solid #444;
+border-radius:999px;
+padding:8px 14px;
+color:#aaa;
+font-size:12px;
+font-weight:800;
+letter-spacing:.5px;
+}
+
+h1{
+font-size:46px;
+line-height:1;
+margin:16px 0 12px;
+}
+
+.sub{
+color:#aaa;
+font-size:17px;
+line-height:1.55;
+}
+
+.card{
+background:#15161d;
+border:1px solid #292b36;
+border-radius:24px;
+padding:20px;
+margin:15px 0;
+}
+
+label{
+display:block;
+color:#aaa;
+font-size:14px;
+margin:14px 0 8px;
+font-weight:600;
+}
+
+input,select{
+width:100%;
+padding:15px;
+border-radius:15px;
+border:1px solid #3b3d49;
+background:#0d0e14;
+color:white;
+font-size:17px;
+outline:none;
+}
+
+input:focus,select:focus{
+border-color:#777;
+}
+
+button{
+width:100%;
+border:0;
+border-radius:17px;
+padding:17px;
+font-size:16px;
+font-weight:900;
+margin-top:18px;
+background:white;
+color:#090a10;
+}
+
+button:active{
+transform:scale(.98);
+}
+
+.num{
+font-size:70px;
+font-weight:900;
+margin:5px 0;
+}
+
+.muted{
+color:#aaa;
+line-height:1.55;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.stat{
+background:#15161d;
+border:1px solid #292b36;
+border-radius:19px;
+padding:16px;
+}
+
+.stat b{
+font-size:28px;
+}
+
+.section h2{
+font-size:22px;
+margin:28px 0 10px;
+}
+
+.section .card{
+line-height:1.65;
+font-size:16px;
+}
+
+.hidden{
+display:none;
+}
+
+.small{
+font-size:12px;
+color:#777;
+line-height:1.5;
+}
+
+.tag{
+display:inline-block;
+padding:7px 10px;
+margin:4px 4px 0 0;
+border:1px solid #383a46;
+border-radius:999px;
+color:#bbb;
+font-size:13px;
+}
+
+.year{
+margin:12px 0;
+}
+
+.year b{
+font-size:18px;
+}
+
+.warning{
+color:#888;
+font-size:12px;
+line-height:1.5;
+margin-top:15px;
+}
+
+@media(max-width:500px){
+h1{font-size:42px}
+.grid{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
+
 <body>
+
 <main>
+
 <div class="badge">KİŞİSEL NUMEROLOJİ REHBERİ</div>
+
 <h1>HAYAT KODU</h1>
-<p class="sub">Doğum tarihindeki sayı örüntülerini sembolik bir kişisel gelişim haritasına dönüştür.</p>
+
+<p class="sub">
+Doğum tarihi, doğum saati, isim ve doğum yeri üzerinden
+sembolik ve kişiselleştirilmiş bir yaşam haritası oluştur.
+</p>
 
 <section id="form" class="card">
+
+<label>Adın</label>
+<input id="name" type="text" placeholder="Örn. Ahmet">
+
+<label>Soyadın</label>
+<input id="surname" type="text" placeholder="Örn. Yılmaz">
+
 <label>Doğum tarihin</label>
-<input id="date" type="date" value="2000-02-14">
+<input id="date" type="date">
+
+<label>Doğum saatin</label>
+<input id="time" type="time">
+
+<label>Doğduğun il</label>
+<input id="city" type="text" placeholder="Örn. Kahramanmaraş">
+
+<label>Doğduğun ilçe</label>
+<input id="district" type="text" placeholder="Örn. Dulkadiroğlu">
+
 <button onclick="solve()">KODUMU ÇÖZ ✦</button>
-<p class="small">Numeroloji bilimsel bir kişilik veya gelecek tahmini yöntemi değildir; sonuçlar öz-refleksiyon amaçlıdır.</p>
+
+<p class="small">
+Bu uygulama numerolojiyi bilimsel bir kişilik veya gelecek tahmini
+yöntemi olarak sunmaz. Sonuçlar sembolik öz-refleksiyon amacıyla
+oluşturulur.
+</p>
+
 </section>
 
+
 <section id="result" class="hidden">
-<div class="card"><div class="muted">YAŞAM YOLUN</div><p class="num" id="life"></p><h2 id="headline"></h2><p class="muted" id="summary"></p></div>
+
+<div class="card">
+
+<div class="muted">YAŞAM YOLUN</div>
+
+<p class="num" id="life"></p>
+
+<h2 id="headline"></h2>
+
+<p class="muted" id="summary"></p>
+
+</div>
+
+
 <div class="grid" id="stats"></div>
-<div class="section"><h2>🧠 Kişilik kodu</h2><div class="card" id="personality"></div></div>
-<div class="section"><h2>🎯 Ruh amacı</h2><div class="card" id="mission"></div></div>
-<div class="section"><h2>💼 Kariyer</h2><div class="card" id="career"></div></div>
-<div class="section"><h2>❤️ İlişkiler</h2><div class="card">Sana iyi gelen ilişkilerde karşılıklı saygı, açık iletişim ve kişisel alan önemli. Partnerini potansiyeline göre değil, bugünkü davranışlarına göre değerlendirmek sağlıklı bir pusula olabilir.</div></div>
-<div class="section"><h2>💰 Para</h2><div class="card">Yüksek değerli bir beceri geliştir → geliri artır → düzenli sermaye biriktir → uzun vadeli ve çeşitlendirilmiş varlıklarla özgürlük alanı oluştur.</div></div>
-<div class="section"><h2>🗺️ 5 yıllık yol haritası</h2><div id="years"></div></div>
-<button onclick="location.reload()">YENİ TARİH ANALİZ ET</button>
+
+
+<div class="section">
+
+<h2>🧠 Kişilik kodu</h2>
+
+<div class="card" id="personality"></div>
+
+</div>
+
+
+<div class="section">
+
+<h2>🎯 Ruh amacı</h2>
+
+<div class="card" id="mission"></div>
+
+</div>
+
+
+<div class="section">
+
+<h2>💼 Kariyer</h2>
+
+<div class="card" id="career"></div>
+
+</div>
+
+
+<div class="section">
+
+<h2>❤️ İlişkiler</h2>
+
+<div class="card" id="relationships"></div>
+
+</div>
+
+
+<div class="section">
+
+<h2>💰 Para ve maddi yapı</h2>
+
+<div class="card" id="money"></div>
+
+</div>
+
+
+<div class="section">
+
+<h2>⚡ Güçlü yönlerin</h2>
+
+<div class="card" id="strengths"></div>
+
+</div>
+
+
+<div class="section">
+
+<h2>🌑 Gölge yönlerin</h2>
+
+<div class="card" id="shadow"></div>
+
+</div>
+
+
+<div class="section">
+
+<h2>⏰ Doğum saati enerjisi</h2>
+
+<div class="card" id="hour"></div>
+
+</div>
+
+
+<div class="section">
+
+<h2>📍 Doğum yeri sembolizmi</h2>
+
+<div class="card" id="place"></div>
+
+</div>
+
+
+<div class="section">
+
+<h2>📆 Kişisel yılın</h2>
+
+<div class="card" id="personalYear"></div>
+
+</div>
+
+
+<div class="section">
+
+<h2>🗺️ 5 yıllık yol haritası</h2>
+
+<div id="years"></div>
+
+</div>
+
+
+<button onclick="location.reload()">
+YENİ KİŞİ ANALİZ ET
+</button>
+
 </section>
+
 </main>
+
+
 <script>
-const P={
-1:["Öncü ve başlatıcı","Bağımsızlık, inisiyatif ve kendi yolunu açma teması baskın.","Kendi kararlarının sorumluluğunu alıp yeni bir şey başlatmak.",["Girişimcilik","Liderlik","Yönetim"]],
-2:["Sezgisel ve bağ kuran","İnsanları, ilişkileri ve ortamın duygusal tonunu okumaya yatkın.","İnsanlar arasında köprü kurmak ve işbirliğini güçlendirmek.",["İletişim","Danışmanlık","İnsan yönetimi"]],
-3:["Yaratıcı anlatıcı","İfade, merak ve fikirleri görünür hale getirme öne çıkar.","Düşünceleri insanlara anlaşılır ve etkili biçimde aktarmak.",["Medya","Eğitim","Pazarlama"]],
-4:["Kurucu ve sistemci","Düzen, güvenilirlik ve somut sonuç alma eğilimi güçlü.","Kalıcı ve sağlam sistemler kurmak.",["Operasyon","Mühendislik","Finans"]],
-5:["Özgür kaşif","Değişim, deneyim ve hareket seni besler; tekdüzelik çabuk sıkabilir.","Deneyimleri bilgiye ve fırsata dönüştürmek.",["Satış","Girişimcilik","Medya"]],
-6:["Sorumlu koruyucu","İnsanlara fayda sağlama, düzen ve sorumluluk öne çıkar.","Güvenli ve daha iyi çalışan çevreler oluşturmak.",["Yönetim","Eğitim","İnsan odaklı hizmetler"]],
-7:["Araştırmacı","Derinlik, analiz ve anlam arayışı güçlüdür.","Karmaşık şeyleri anlayıp gerçeğe yaklaşmak.",["Araştırma","Teknoloji","Analiz"]],
-8:["Stratejist ve yönetici","Sonuç, güç, kaynak ve ölçekleme konularına yatkınlık.","Kaynakları etkili yönetip büyük sonuçlar üretmek.",["Finans","Yönetim","İş geliştirme"]],
-9:["Anlam ve etki arayan","Büyük resmi görme, idealizm ve başkalarına fayda sağlama teması belirgin.","Kendi deneyimini ve yeteneğini başkalarının hayatında gerçek değere dönüştürmek.",["Liderlik","Eğitim/danışmanlık","Sosyal etki/girişim"]]
-};
-function red(n){while(n>9&&n!==11&&n!==22&&n!==33)n=String(n).split("").reduce((a,b)=>a+ +b,0);return n}
-function solve(){
- let d=document.getElementById("date").value;if(!d)return;
- let [y,m,day]=d.split("-").map(Number),life=red(y+m+day),p=P[life]||P[9];
- document.getElementById("form").classList.add("hidden");document.getElementById("result").classList.remove("hidden");
- document.getElementById("life").textContent=life;document.getElementById("headline").textContent=p[0];document.getElementById("summary").textContent=p[1];
- let age=new Date().getFullYear()-y-(new Date()<new Date(new Date().getFullYear(),m-1,day)?1:0);
- document.getElementById("stats").innerHTML=`<div class="stat"><b>${red(day)}</b><br><span class="muted">Doğum günü</span></div><div class="stat"><b>${red(m)}</b><br><span class="muted">Ay enerjisi</span></div><div class="stat"><b>${red(y)}</b><br><span class="muted">Yıl enerjisi</span></div><div class="stat"><b>${age}</b><br><span class="muted">Yaş</span></div>`;
- document.getElementById("personality").textContent=p[1]+" Gölge tarafında aşırı düşünme veya kendi ihtiyacını ikinci plana atma görülebilir; bunu kesin teşhis değil, düşünme teması olarak ele al.";
- document.getElementById("mission").textContent=p[2];
- document.getElementById("career").innerHTML="<b>Güçlü alanlar</b><br>• "+p[3].join("<br>• ");
- let now=new Date().getFullYear();let themes=["Yön seç ve azalt","Beceriye yatırım yap","Geliri çeşitlendir","Sistem kur ve ölçekle","Etkiyi büyüt"];
- document.getElementById("years").innerHTML=themes.map((t,i)=>`<div class="card"><b>${now+i} — ${t}</b><p class="muted">${["Dağınık hedefleri azaltıp tek ana yön belirle.","Bir yüksek değerli beceriyi ölçülebilir seviyeye taşı.","Beceriyi gelire çevir ve düzenli sermaye biriktir.","Otomasyon, yatırım, network ve süreçler kur.","Liderlik, girişim veya uzmanlık alanında ölçeği büyüt."][i]}</p></div>`).join("");
+
+/* =========================
+   TEMEL NUMEROLOJİ
+========================= */
+
+function reduce(n){
+
+n=Math.abs(Number(n)||0);
+
+while(n>9 && n!==11 && n!==22 && n!==33){
+
+n=String(n)
+.split("")
+.reduce((a,b)=>a+Number(b),0);
+
 }
-if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+
+return n;
+}
+
+
+/* =========================
+   TÜRKÇE KARAKTERLER
+========================= */
+
+function normalize(text){
+
+return text
+.toUpperCase()
+.replace(/Ç/g,"C")
+.replace(/Ğ/g,"G")
+.replace(/İ/g,"I")
+.replace(/I/g,"I")
+.replace(/Ö/g,"O")
+.replace(/Ş/g,"S")
+.replace(/Ü/g,"U")
+.replace(/[^A-Z]/g,"");
+}
+
+
+/* =========================
+   İSİM SAYISI
+========================= */
+
+const letterValues={
+A:1,B:2,C:3,D:4,E:5,F:6,G:7,H:8,
+I:9,J:1,K:2,L:3,M:4,N:5,O:6,P:7,
+Q:8,R:9,S:1,T:2,U:3,V:4,W:5,X:6,
+Y:7,Z:8
+};
+
+function nameNumber(text){
+
+let s=normalize(text);
+
+let total=0;
+
+for(let c of s){
+
+total+=letterValues[c]||0;
+
+}
+
+return reduce(total);
+}
+
+
+/* =========================
+   YAŞAM YOLU
+========================= */
+
+function lifeNumber(date){
+
+let [y,m,d]=date.split("-").map(Number);
+
+return reduce(
+reduce(y)+
+reduce(m)+
+reduce(d)
+);
+
+}
+
+
+/* =========================
+   VERİLER
+========================= */
+
+const profiles={
+
+1:{
+title:"Öncü ve başlatıcı",
+summary:"Bağımsızlık, inisiyatif ve kendi yolunu açma eğilimi güçlü.",
+personality:"Karar vermen gerektiğinde başkasının onayından çok kendi iç pusulana güvenmeye yatkınsın. Bir şeyin nasıl yapılması gerektiğini görmek kadar onu ilk uygulayan kişi olma isteğin de belirgin olabilir.",
+mission:"Kendi iradeni geliştirirken başkalarının yolunu da açabilecek işler ortaya koymak.",
+career:"Girişimcilik, yönetim, liderlik, proje sahipliği, satış ve kendi karar alanının geniş olduğu işler.",
+relationships:"İlişkide özgürlük alanına ihtiyaç duyabilirsin. Fazla kontrol edildiğinde geri çekilme eğilimi oluşabilir.",
+money:"Para konusunda bağımsızlık fikri seni motive edebilir. En büyük gelişim alanın hızlı karar ile uzun vadeli planı dengelemek.",
+strengths:["İnisiyatif","Cesaret","Karar verme","Liderlik"],
+shadow:"Sabırsızlık, her şeyi tek başına yapmaya çalışma ve yardım istemekte zorlanma.",
+hour:"Doğum saatinin oluşturduğu sayı, kişisel ritmini ve günlük karar alma biçimini sembolik olarak temsil eder."
+},
+
+2:{
+title:"Sezgisel ve bağ kuran",
+summary:"İnsanları, ilişkileri ve ortamın duygusal tonunu okumaya yatkınlık öne çıkıyor.",
+personality:"İnsanların söylediklerinden çok söylemediklerini fark etmeye yatkın olabilirsin. Ortamdaki gerilimi veya uyumu erken sezmen sosyal ilişkilerde güçlü bir avantaj sağlayabilir.",
+mission:"İnsanlar arasında köprü kurmak, işbirliğini güçlendirmek ve güven ortamı oluşturmak.",
+career:"İletişim, danışmanlık, insan yönetimi, eğitim, koordinasyon ve ekip çalışması gerektiren alanlar.",
+relationships:"Duygusal güven ve açık iletişim senin için yüzeysel heyecandan daha önemli olabilir.",
+money:"Finansal kararlarında duygusal etkiden uzaklaşmak ve rakamlara dayalı sistem kurmak faydalı olabilir.",
+strengths:["Empati","Sezgi","Diplomasi","İşbirliği"],
+shadow:"Fazla düşünmek, başkalarının beklentilerini kendi ihtiyaçlarının önüne koymak.",
+hour:"Saat enerjisi kararlarının hızından çok kararların arkasındaki duygusal motivasyonu sembolik olarak anlatır."
+},
+
+3:{
+title:"Yaratıcı anlatıcı",
+summary:"İfade, merak ve fikirleri görünür hale getirme teması güçlü.",
+personality:"Bir fikrin yalnızca doğru olması değil, nasıl anlatıldığı da senin için önemli olabilir. Mizah, konuşma, yazma veya görsel ifade alanlarında doğal bir akış bulunabilir.",
+mission:"Düşüncelerini başkalarının anlayabileceği ve hatırlayabileceği biçimde aktarmak.",
+career:"Medya, eğitim, içerik üretimi, pazarlama, tasarım, satış ve iletişim.",
+relationships:"Neşeli iletişim ve zihinsel uyum seni besler. İçine atmak yerine konuşmak ilişkilerinde önemli olabilir.",
+money:"Yaratıcılığını tek seferlik gelir yerine sürdürülebilir bir sisteme dönüştürmek önemli.",
+strengths:["Yaratıcılık","İfade","Mizah","Sosyal zeka"],
+shadow:"Dağınıklık, başladığın işleri bitirmekte zorlanmak ve sürekli yeni uyaran aramak.",
+hour:"Saat enerjisi ifade biçiminin hızını ve gün içindeki doğal hareket ritmini sembolik olarak yansıtır."
+},
+
+4:{
+title:"Kurucu ve sistemci",
+summary:"Düzen, güvenilirlik ve somut sonuç alma eğilimi güçlü.",
+personality:"Bir şeyin çalışması için yalnızca fikir değil, sağlam bir sistem gerektiğini düşünmeye yatkınsın. Güvenilirlik senin için çoğu zaman gösterişli olmaktan daha değerlidir.",
+mission:"Kalıcı, düzenli ve insanların güvenebileceği sistemler oluşturmak.",
+career:"Finans, operasyon, mühendislik, kamu, yönetim, planlama ve süreç geliştirme.",
+relationships:"Sadakat ve güven senin için ilişkinin temel taşları olabilir.",
+money:"Düzenli birikim, bütçe ve uzun vadeli planlar sana daha uygun bir finansal yapı oluşturabilir.",
+strengths:["Disiplin","Planlama","Sabır","Güvenilirlik"],
+shadow:"Aşırı kontrol, esneklik kaybı ve değişime gereğinden fazla direnme.",
+hour:"Saat enerjisi günlük disiplin ve çalışma ritmini sembolik olarak destekleyen bir gösterge olarak yorumlanır."
+},
+
+5:{
+title:"Özgür kaşif",
+summary:"Değişim, deneyim, hareket ve özgürlük temaları öne çıkıyor.",
+personality:"Tekdüzelik uzun süre devam ettiğinde motivasyonun düşebilir. Yeni insanlar, fikirler ve deneyimler zihnini canlı tutabilir.",
+mission:"Deneyimleri bilgiye, bilgiyi fırsata dönüştürmek.",
+career:"Satış, medya, girişimcilik, seyahat, pazarlama ve değişken çalışma ortamları.",
+relationships:"İlişkide yakınlık kadar kişisel alan da önemli olabilir.",
+money:"Gelir çeşitlendirme fikri sana doğal gelebilir; ancak plansız risk almak yerine kontrollü denemeler daha sağlıklı olabilir.",
+strengths:["Uyum","Merak","İletişim","Cesaret"],
+shadow:"Sabırsızlık, çabuk sıkılma ve aynı anda fazla şey deneme.",
+hour:"Saat enerjisi hareket ihtiyacının ve zihinsel canlılığının sembolik göstergelerinden biri olarak yorumlanabilir."
+},
+
+6:{
+title:"Sorumlu koruyucu",
+summary:"Sorumluluk, düzen ve insanlara fayda sağlama eğilimi belirgin.",
+personality:"Yakın çevrenin ihtiyaçlarını hızlı fark edebilirsin. İnsanların sana güvenmesi güçlü bir tarafın olabilir; ancak sürekli sorumluluk almak seni yorabilir.",
+mission:"İnsanların daha güvenli ve dengeli bir ortam oluşturmasına katkıda bulunmak.",
+career:"Yönetim, eğitim, kamu hizmetleri, insan kaynakları, danışmanlık ve insan odaklı işler.",
+relationships:"Sadakat, güven ve sahiplenme güçlüdür. Fakat ilişkiyi tek başına taşımamaya dikkat etmek gerekir.",
+money:"Güvenlik ihtiyacın nedeniyle düzenli ve kontrollü finansal yapı sana iyi gelebilir.",
+strengths:["Sorumluluk","Sadakat","Koruyuculuk","Düzen"],
+shadow:"Fazla yük alma, mükemmeliyetçilik ve herkesin sorununu çözmeye çalışma.",
+hour:"Saat enerjisi sorumluluklarını gün içine nasıl dağıttığını sembolik olarak anlatan yardımcı bir göstergedir."
+},
+
+7:{
+title:"Araştırmacı",
+summary:"Derinlik, analiz ve anlam arayışı güçlü.",
+personality:"Bir konuyu yüzeysel öğrenmek yerine arkasındaki mekanizmayı anlamak isteyebilirsin. Tek başına düşünmek ve araştırmak zaman zaman sosyal ortamdan daha besleyici gelebilir.",
+mission:"Karmaşık şeyleri anlayıp daha doğru kararlar verebilmek.",
+career:"Araştırma, teknoloji, analiz, yazılım, bilim, veri ve uzmanlık gerektiren alanlar.",
+relationships:"Güven oluştuğunda derin bağ kurabilirsin; fakat herkese hemen açılmayabilirsin.",
+money:"Finansal kararlarında araştırma yapmak güçlü tarafın olabilir. Aşırı analiz nedeniyle fırsatı kaçırmamaya dikkat.",
+strengths:["Analiz","Araştırma","Sezgi","Odak"],
+shadow:"Aşırı düşünme, içine kapanma ve kusursuz bilgi bekleme.",
+hour:"Saat enerjisi zihinsel yoğunluğun ve yalnız kalma ihtiyacının sembolik bir katmanı olarak ele alınır."
+},
+
+8:{
+title:"Stratejist ve yönetici",
+summary:"Sonuç, kaynak, güç ve ölçekleme temaları belirgin.",
+personality:"Bir hedefin arkasında gerçek bir sistem ve sonuç görmek isteyebilirsin. Kaynakları yönetmek ve sonuç üretmek seni motive edebilir.",
+mission:"Kaynakları etkili kullanarak büyük ve ölçülebilir sonuçlar üretmek.",
+career:"Finans, yönetim, iş geliştirme, girişimcilik, satış ve organizasyon.",
+relationships:"Saygı ve güven temel ihtiyaçların arasında olabilir. Güç mücadelesi oluştuğunda ilişkinin dengesi bozulabilir.",
+money:"Para konusunda stratejik düşünme potansiyelin yüksek olabilir. Kazanmak kadar korumak ve yönetmek önemlidir.",
+strengths:["Strateji","Yönetim","Kararlılık","Sonuç odaklılık"],
+shadow:"Kontrolcülük, fazla rekabet ve başarıyı yalnızca maddi sonuçlarla ölçmek.",
+hour:"Saat enerjisi hedeflere ulaşma hızını ve günlük çalışma ritmini sembolik olarak tamamlayan göstergedir."
+},
+
+9:{
+title:"Anlam ve etki arayan",
+summary:"Büyük resmi görme, idealizm ve başkalarına fayda sağlama teması belirgin.",
+personality:"Bir şeyin yalnızca para veya statü getirmesi sana her zaman yeterli gelmeyebilir. Yaptığın şeyin anlamı ve başka insanlar üzerindeki etkisi önemli olabilir.",
+mission:"Kendi deneyimini ve yeteneğini başkalarının hayatında gerçek değere dönüştürmek.",
+career:"Liderlik, eğitim, danışmanlık, sosyal girişim, iletişim, sanat ve insanlara dokunan işler.",
+relationships:"Derinlik ve samimiyet arayabilirsin. Yüzeysel bağlar zamanla seni yorabilir.",
+money:"Para senin için çoğu zaman amaçtan çok araç olabilir. Ancak başkalarına fayda sağlama isteğini kendi finansal güvenliğinle dengelemek önemlidir.",
+strengths:["Empati","Vizyon","İdealizm","İnsanlara ilham verme"],
+shadow:"Geçmişi bırakamama, fazla fedakarlık ve kendi ihtiyaçlarını ikinci plana atma.",
+hour:"Saat enerjisi idealizmini günlük hayata nasıl taşıdığını sembolik olarak tamamlayan bir göstergedir."
+}
+
+};
+
+
+/* =========================
+   ÇÖZÜCÜ
+========================= */
+
+function solve(){
+
+let name=document.getElementById("name").value.trim();
+let surname=document.getElementById("surname").value.trim();
+let date=document.getElementById("date").value;
+let time=document.getElementById("time").value;
+let city=document.getElementById("city").value.trim();
+let district=document.getElementById("district").value.trim();
+
+if(!name || !surname || !date || !time || !city || !district){
+
+alert("Lütfen tüm alanları doldur. ✨");
+
+return;
+
+}
+
+
+/* ANA SAYILAR */
+
+let life=lifeNumber(date);
+
+let nameNum=nameNumber(name);
+
+let surnameNum=nameNumber(surname);
+
+let fullNum=nameNumber(name+surname);
+
+let [year,month,day]=date.split("-").map(Number);
+
+let [hour,minute]=time.split(":").map(Number);
+
+let hourNum=reduce(hour+minute);
+
+let birthDayNum=reduce(day);
+
+let cityNum=nameNumber(city);
+
+let districtNum=nameNumber(district);
+
+
+/* PROFİL */
+
+let p=profiles[life] || profiles[9];
+
+
+/* YAŞ */
+
+let today=new Date();
+
+let birth=new Date(year,month-1,day);
+
+let age=today.getFullYear()-year;
+
+if(
+today.getMonth()<month-1 ||
+(today.getMonth()===month-1 && today.getDate()<day)
+){
+
+age--;
+
+}
+
+
+/* KİŞİSEL YIL */
+
+let currentYear=today.getFullYear();
+
+let personalYear=reduce(
+birthDayNum+
+month+
+reduce(currentYear)
+);
+
+
+/* FORMU GİZLE */
+
+document.getElementById("form").classList.add("hidden");
+
+document.getElementById("result").classList.remove("hidden");
+
+
+/* BAŞLIK */
+
+document.getElementById("life").textContent=life;
+
+document.getElementById("headline").textContent=p.title;
+
+document.getElementById("summary").textContent=
+p.summary+
+" "+name+" için diğer kişisel sayılar da bu temel temayı farklı biçimlerde tamamlıyor.";
+
+
+/* İSTATİSTİKLER */
+
+document.getElementById("stats").innerHTML=`
+
+<div class="stat">
+<b>${birthDayNum}</b><br>
+<span class="muted">Doğum günü</span>
+</div>
+
+<div class="stat">
+<b>${reduce(month)}</b><br>
+<span class="muted">Ay enerjisi</span>
+</div>
+
+<div class="stat">
+<b>${reduce(year)}</b><br>
+<span class="muted">Yıl enerjisi</span>
+</div>
+
+<div class="stat">
+<b>${age}</b><br>
+<span class="muted">Yaş</span>
+</div>
+
+<div class="stat">
+<b>${nameNum}</b><br>
+<span class="muted">Ad sayısı</span>
+</div>
+
+<div class="stat">
+<b>${fullNum}</b><br>
+<span class="muted">İsim kodu</span>
+</div>
+
+`;
+
+
+/* KİŞİLİK */
+
+let personalityExtra="";
+
+if(nameNum===life){
+
+personalityExtra=
+" Ad sayın ile yaşam yolunun aynı titreşime gelmesi, uygulamanın sembolik modelinde kimlik algın ile yaşam yönünün birbirini desteklediği şeklinde yorumlanır.";
+
+}else{
+
+personalityExtra=
+" Ad sayın ile yaşam yolunun farklı olması, dışarıya gösterdiğin kimlik ile hayatın senden beklediğini düşündüğün yön arasında zaman zaman farklılık hissedebileceğini sembolik olarak anlatabilir.";
+
+}
+
+document.getElementById("personality").textContent=
+p.personality+
+personalityExtra+
+" Doğum günü sayın "+birthDayNum+
+" olduğu için karar alma ve günlük davranışlarında bu sayının teması da ikinci bir katman oluşturur.";
+
+
+/* RUH AMACI */
+
+document.getElementById("mission").textContent=
+p.mission+
+" İsim kodunun "+fullNum+
+" olması bu amacı nasıl ifade ettiğin konusunda farklı bir ton oluşturuyor. Buradaki yorum kesin kader iddiası değil, kendini gözlemlemek için kullanılan sembolik bir çerçevedir.";
+
+
+/* KARİYER */
+
+document.getElementById("career").innerHTML=
+"<b>Sana uygun olabilecek yönler</b><br><br>"+
+p.career+
+"<br><br>"+
+"<span class='tag'>Yaşam yolu "+life+"</span>"+
+"<span class='tag'>İsim kodu "+fullNum+"</span>"+
+"<span class='tag'>Ad "+nameNum+"</span>";
+
+
+
+/* İLİŞKİLER */
+
+let relationshipText=p.relationships;
+
+if(nameNum===2 || nameNum===6){
+
+relationshipText+=
+" Özellikle duygusal bağlarda karşı tarafın ihtiyaçlarını fazla üstlenmemek senin için önemli bir denge noktası olabilir.";
+
+}
+
+if(nameNum===5){
+
+relationshipText+=
+" Özgürlük ihtiyacın nedeniyle ilişkinin içinde kişisel alanın korunması uzun vadeli uyumu destekleyebilir.";
+
+}
+
+if(nameNum===8){
+
+relationshipText+=
+" İlişkide güç ve kontrol dengesinin sağlıklı tutulması özellikle önemli olabilir.";
+
+}
+
+document.getElementById("relationships").textContent=
+relationshipText;
+
+
+
+/* PARA */
+
+document.getElementById("money").textContent=
+p.money+
+" Senin kişisel modelinde doğum yılı enerjisi "+
+reduce(year)+
+" olduğu için finansal kararlarında uzun vadeli düşünme ile günlük tercihler arasında denge kurmak ayrıca değerlendirilebilir.";
+
+
+
+/* GÜÇLÜ YÖNLER */
+
+document.getElementById("strengths").innerHTML=
+p.strengths
+.map(x=>`<span class="tag">${x}</span>`)
+.join("");
+
+
+
+/* GÖLGE */
+
+document.getElementById("shadow").textContent=
+p.shadow+
+" Özellikle yaşam yolun "+life+
+" olduğu için bu özellikler aşırıya kaçtığında güçlü tarafının tersine dönüşmesi mümkün olabilir. Amaç bu yönleri bastırmak değil, yönetmeyi öğrenmektir.";
+
+
+
+/* SAAT */
+
+document.getElementById("hour").textContent=
+p.hour+
+" Senin doğum saatin "+time+
+" ve hesaplanan saat sayın "+hourNum+
+". Bu sayı, uygulamanın sembolik modelinde günlük ritim ve karar alma biçimin için ek bir katman olarak kullanılır.";
+
+
+
+/* YER */
+
+document.getElementById("place").textContent=
+name+
+", "+city+
+" / "+district+
+" doğumlu olarak girildi. İl adından hesaplanan sembolik sayı "+
+cityNum+
+", ilçe sayısı ise "+
+districtNum+
+". Bu değerler coğrafyanın kişiliğini bilimsel olarak belirlediği anlamına gelmez; yalnızca kişisel analizde ek bir sembolik değişken olarak kullanılır.";
+
+
+
+/* KİŞİSEL YIL */
+
+let yearMeaning={
+
+1:"Yeni başlangıçlar, bağımsız kararlar ve yeni bir döngü.",
+2:"Sabır, ilişkiler, ortaklıklar ve hazırlık.",
+3:"İfade, sosyallik, yaratıcılık ve görünürlük.",
+4:"Çalışma, düzen kurma ve sağlam temel oluşturma.",
+5:"Değişim, hareket, yeni deneyimler ve fırsatlar.",
+6:"Aile, sorumluluk, düzen ve ilişkiler.",
+7:"İçe dönüş, araştırma, öğrenme ve uzmanlaşma.",
+8:"Kariyer, para, yönetim ve sonuç alma.",
+9:"Tamamlama, bırakma, geçmişi kapatma ve yeni döngüye hazırlanma."
+
+};
+
+document.getElementById("personalYear").innerHTML=
+`
+Bu yılın kişisel sayısı <b>${personalYear}</b>.
+
+<br><br>
+
+${yearMeaning[personalYear] || "Yeni bir gelişim döngüsünü temsil eder."}
+
+<br><br>
+
+Bu yorum geleceği kesin olarak tahmin etmez; içinde bulunduğun dönemi düşünmek için sembolik bir çerçevedir.
+`;
+
+
+
+/* 5 YILLIK PLAN */
+
+let themes={
+
+1:["Başlangıç","Beceri","Cesur karar","Liderlik","Yeni döngü"],
+
+2:["İlişkiler","Sabır","Ortaklık","Uzmanlaşma","Denge"],
+
+3:["Yaratıcılık","Görünürlük","İletişim","Üretim","Marka"],
+
+4:["Temel","Disiplin","Sistem","Finans","Kalıcı yapı"],
+
+5:["Değişim","Deneyim","Fırsat","Gelir çeşitlendirme","Özgürlük"],
+
+6:["Sorumluluk","Aile","Denge","Güven","Huzur"],
+
+7:["Araştırma","Öğrenme","Uzmanlık","Derinleşme","Bilgelik"],
+
+8:["Kariyer","Para","Yönetim","Büyüme","Etki"],
+
+9:["Tamamlama","Bırakma","Şifa","Etki","Yeni başlangıç"]
+
+};
+
+let texts={
+
+1:"Yeni bir yön seç ve ilk adımı at.",
+2:"İlişkileri ve işbirliklerini güçlendir.",
+3:"Ürettiğini görünür hale getir.",
+4:"Hayatında çalışan sistemler kur.",
+5:"Değişimi kontrollü biçimde kullan.",
+6:"Sorumluluklarını dengeli hale getir.",
+7:"Bir konuda derin uzmanlık oluştur.",
+8:"Kaynaklarını ve gelirini büyüt.",
+9:"Artık sana hizmet etmeyen döngüleri tamamla."
+
+};
+
+document.getElementById("years").innerHTML=
+themes[life].map((theme,i)=>{
+
+let year=currentYear+i;
+
+return `
+<div class="card year">
+<b>${year} — ${theme}</b>
+<p class="muted">${texts[life]}</p>
+</div>
+`;
+
+}).join("");
+
+}
+
 </script>
-</body></html>
+
+</body>
+</html>
