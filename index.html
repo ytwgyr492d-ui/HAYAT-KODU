@@ -10,6 +10,7 @@
 <title>Hayat Kodu — Taner Öztürk</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -18,14 +19,18 @@
 
 :root{
     --bg:#07080d;
-    --bg2:#0c0d14;
-    --card:rgba(16,17,25,.78);
+    --bg2:#0d0e16;
+    --card:rgba(17,18,27,.80);
+
     --gold:#d7ad61;
-    --gold2:#f1d18b;
-    --gold3:#9b7535;
-    --white:#f5f2ea;
+    --gold2:#f2d48f;
+    --gold3:#9a7334;
+
+    --white:#f7f3ea;
     --muted:#9295a3;
-    --line:rgba(215,173,97,.35);
+    --muted2:#686b78;
+
+    --line:rgba(215,173,97,.30);
 }
 
 html{
@@ -34,73 +39,142 @@ html{
 
 body{
     min-height:100vh;
-    background:
-        radial-gradient(circle at 82% 8%,rgba(215,173,97,.18),transparent 22%),
-        radial-gradient(circle at 5% 55%,rgba(75,82,120,.13),transparent 28%),
-        linear-gradient(145deg,#05060a,#0a0b11 45%,#07080d);
     color:var(--white);
-    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "Segoe UI",
+        sans-serif;
+
     overflow-x:hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 5%,
+            rgba(215,173,97,.16),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 0% 45%,
+            rgba(75,82,120,.14),
+            transparent 28%
+        ),
+        linear-gradient(
+            145deg,
+            #05060a 0%,
+            #0b0c13 48%,
+            #07080d 100%
+        );
 }
+
+/* ATMOSPHERE */
 
 body:before{
     content:"";
     position:fixed;
-    width:500px;
-    height:500px;
-    right:-260px;
-    top:-180px;
-    border:1px solid rgba(215,173,97,.12);
+
+    width:520px;
+    height:520px;
+
+    right:-290px;
+    top:-220px;
+
     border-radius:50%;
+
+    border:1px solid rgba(215,173,97,.10);
+
     box-shadow:
-        0 0 0 35px rgba(215,173,97,.025),
-        0 0 0 70px rgba(215,173,97,.018),
-        0 0 0 110px rgba(215,173,97,.012);
+        0 0 0 38px rgba(215,173,97,.025),
+        0 0 0 78px rgba(215,173,97,.018),
+        0 0 0 120px rgba(215,173,97,.010);
+
     pointer-events:none;
 }
 
 body:after{
     content:"✦";
+
     position:fixed;
-    right:15%;
-    top:14%;
+
+    right:14%;
+    top:13%;
+
     color:rgba(241,209,139,.25);
+
     font-size:18px;
+
     pointer-events:none;
 }
 
+/* CONTAINER */
+
 .container{
     width:min(1120px,calc(100% - 32px));
+
     margin:auto;
-    padding:54px 0 60px;
+
+    padding:
+        54px
+        0
+        65px;
 }
 
 /* HERO */
 
 .hero{
     position:relative;
-    padding:18px 25px 45px;
+
+    padding:
+        18px
+        25px
+        42px;
 }
 
 .badge{
     display:inline-flex;
-    padding:11px 20px;
-    border:1px solid rgba(215,173,97,.32);
+
+    align-items:center;
+
+    padding:
+        11px
+        19px;
+
+    border:
+        1px solid
+        rgba(215,173,97,.32);
+
     border-radius:50px;
-    color:#c6c8d0;
-    font-size:12px;
-    letter-spacing:4px;
+
+    color:#c8c9d0;
+
+    font-size:11px;
+
+    letter-spacing:3.5px;
+
     text-transform:uppercase;
+
     background:rgba(255,255,255,.025);
-    backdrop-filter:blur(10px);
+
+    backdrop-filter:blur(12px);
 }
 
 .logo{
-    margin-top:27px;
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:clamp(48px,9vw,90px);
+    margin-top:28px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(50px,9vw,92px);
+
     font-weight:400;
+
     letter-spacing:2px;
+
     line-height:.95;
 }
 
@@ -110,43 +184,73 @@ body:after{
 
 .subtitle{
     margin-top:25px;
-    color:#a7a9b4;
-    font-size:clamp(17px,2.3vw,23px);
+
+    color:#a6a8b3;
+
+    font-size:
+        clamp(16px,2.3vw,22px);
+
     line-height:1.7;
-    max-width:700px;
+
+    max-width:730px;
 }
 
 .gold-line{
+    position:relative;
+
     width:210px;
     height:1px;
+
     margin-top:30px;
-    background:linear-gradient(90deg,var(--gold),transparent);
-    position:relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            transparent
+        );
 }
 
 .gold-line:after{
     content:"✦";
+
     position:absolute;
-    left:105px;
+
+    left:99px;
     top:-11px;
+
     color:var(--gold2);
+
     background:#08090e;
+
     padding:0 8px;
 }
 
-/* FORM CARD */
+/* CARD */
 
 .card{
-    border:1px solid var(--line);
+    border:
+        1px solid
+        var(--line);
+
     background:
-        linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012)),
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.010)
+        ),
         var(--card);
+
     border-radius:30px;
+
     box-shadow:
-        0 30px 80px rgba(0,0,0,.38),
-        inset 0 1px 0 rgba(255,255,255,.04);
-    backdrop-filter:blur(18px);
+        0 30px 80px rgba(0,0,0,.40),
+        inset 0 1px 0 rgba(255,255,255,.045);
+
+    backdrop-filter:blur(20px);
 }
+
+/* FORM */
 
 .form-card{
     padding:38px;
@@ -154,116 +258,224 @@ body:after{
 
 .section-title{
     display:flex;
+
     align-items:center;
+
     gap:18px;
+
     margin-bottom:8px;
 }
 
 .section-icon{
     width:52px;
     height:52px;
-    border:2px solid var(--gold2);
+
+    flex:none;
+
+    border:
+        1.5px solid
+        var(--gold2);
+
     border-radius:50%;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     color:var(--gold2);
-    font-size:25px;
+
+    font-size:23px;
+
+    box-shadow:
+        0 0 25px
+        rgba(215,173,97,.08);
 }
 
 .section-title h2{
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:28px;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:29px;
+
     font-weight:500;
 }
 
 .section-desc{
     margin-left:70px;
+
     margin-bottom:30px;
+
     color:#8e919d;
-    font-size:16px;
+
+    font-size:15px;
+
+    line-height:1.6;
 }
+
+/* INPUT GRID */
 
 .grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px 30px;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        24px
+        30px;
 }
 
 .field label{
     display:block;
+
     margin-bottom:10px;
-    font-size:15px;
-    font-weight:600;
+
     color:#e6e2db;
+
+    font-size:15px;
+
+    font-weight:600;
 }
 
 .field input{
     width:100%;
+
     height:65px;
+
+    padding:
+        0
+        20px;
+
+    border:
+        1px solid
+        rgba(150,153,170,.42);
+
     border-radius:18px;
-    border:1px solid rgba(150,153,170,.42);
+
     outline:none;
-    background:rgba(3,4,8,.62);
+
+    background:
+        rgba(3,4,8,.65);
+
     color:#f5f2ea;
-    padding:0 20px;
+
     font-size:17px;
-    transition:.25s;
+
+    transition:
+        border .25s,
+        box-shadow .25s,
+        transform .25s;
 }
 
 .field input::placeholder{
-    color:#676b78;
+    color:#666a77;
 }
 
 .field input:focus{
     border-color:var(--gold);
-    box-shadow:0 0 0 3px rgba(215,173,97,.08);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(215,173,97,.08);
+
+    transform:translateY(-1px);
 }
+
+/* DATE / TIME */
+
+.field input[type="date"],
+.field input[type="time"]{
+    color-scheme:dark;
+}
+
+/* BUTTON */
 
 .solve-btn{
     width:100%;
+
     height:70px;
+
     margin-top:32px;
-    border:1px solid #f0cc79;
+
+    border:
+        1px solid
+        #f0cc79;
+
     border-radius:20px;
+
     background:
-        linear-gradient(110deg,#e8bf70,#b68538,#e5bd6d);
+        linear-gradient(
+            110deg,
+            #e8bf70,
+            #b68538,
+            #e5bd6d
+        );
+
     color:#101116;
-    font-size:19px;
+
+    font-size:18px;
+
     font-weight:800;
+
     letter-spacing:.3px;
+
     cursor:pointer;
+
     box-shadow:
-        0 12px 30px rgba(215,173,97,.17),
-        inset 0 1px rgba(255,255,255,.45);
+        0 12px 30px
+        rgba(215,173,97,.17),
+
+        inset 0 1px
+        rgba(255,255,255,.45);
+
     transition:.25s;
 }
 
 .solve-btn:hover{
     transform:translateY(-2px);
-    box-shadow:0 17px 38px rgba(215,173,97,.25);
+
+    box-shadow:
+        0 17px 38px
+        rgba(215,173,97,.25);
 }
 
 .solve-btn:active{
     transform:scale(.985);
 }
 
+/* DISCLAIMER */
+
 .disclaimer{
     display:flex;
+
     gap:15px;
+
     margin-top:23px;
+
     color:#858996;
-    font-size:13px;
-    line-height:1.6;
+
+    font-size:12px;
+
+    line-height:1.65;
 }
 
 .info{
     width:27px;
     height:27px;
+
     min-width:27px;
-    border:1px solid #777c8d;
+
+    border:
+        1px solid
+        #777c8d;
+
     border-radius:50%;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
 }
@@ -272,121 +484,76 @@ body:after{
 
 .features{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:22px;
+
     margin-top:25px;
 }
 
 .feature{
     padding:31px 20px;
+
     min-height:165px;
+
     text-align:center;
-    border:1px solid rgba(215,173,97,.26);
+
+    border:
+        1px solid
+        rgba(215,173,97,.24);
+
     border-radius:25px;
-    background:rgba(12,13,20,.67);
+
+    background:
+        rgba(12,13,20,.67);
+
+    transition:.25s;
 }
 
 .feature-icon{
     color:var(--gold2);
-    font-size:34px;
-    margin-bottom:17px;
+
+    font-size:32px;
+
+    margin-bottom:16px;
 }
 
 .feature h3{
     font-size:18px;
+
     margin-bottom:9px;
 }
 
 .feature p{
     color:#858996;
+
     font-size:14px;
+
+    line-height:1.5;
 }
 
-/* QUOTE */
+.feature:hover{
+    transform:translateY(-4px);
 
-.bottom{
-    margin-top:45px;
-    display:grid;
-    grid-template-columns:1fr 310px;
-    gap:35px;
-    align-items:center;
-}
-
-.quote{
-    padding:15px 10px 20px;
-}
-
-.quote-mark{
-    font-family:Georgia,serif;
-    font-size:65px;
-    line-height:.5;
-    color:var(--gold2);
-}
-
-.quote-text{
-    margin-top:20px;
-    font-family:Georgia,"Times New Roman",serif;
-    font-style:italic;
-    font-size:25px;
-    line-height:1.65;
-    color:#c4c5cc;
-    max-width:600px;
-}
-
-.quote-label{
-    margin-top:25px;
-    padding-top:17px;
-    width:130px;
-    border-top:1px solid var(--gold);
-    color:#999ba5;
-    font-size:11px;
-    letter-spacing:5px;
-}
-
-/* SIGNATURE */
-
-.signature{
-    text-align:center;
-    padding:31px 20px;
-    border:1px solid var(--gold);
-    border-radius:25px;
-    background:rgba(12,13,19,.72);
-    box-shadow:0 20px 55px rgba(0,0,0,.25);
-}
-
-.signature .to{
-    font-family:Georgia,serif;
-    font-size:32px;
-    color:#f0d18d;
-    letter-spacing:3px;
-}
-
-.signature .creator{
-    margin-top:14px;
-    color:#e8e6df;
-    font-size:15px;
-}
-
-.signature .small-line{
-    width:45px;
-    height:1px;
-    background:var(--gold);
-    margin:19px auto;
-}
-
-.signature .copyright{
-    color:#8c8e99;
-    font-size:13px;
-    letter-spacing:1px;
+    border-color:
+        rgba(215,173,97,.45);
 }
 
 /* RESULT */
 
 .result{
     display:none;
+
     margin-top:28px;
-    padding:38px;
-    animation:fadeUp .5s ease;
+
+    padding:40px;
+
+    animation:
+        fadeUp
+        .55s
+        ease;
 }
 
 .result.show{
@@ -394,10 +561,12 @@ body:after{
 }
 
 @keyframes fadeUp{
+
     from{
         opacity:0;
-        transform:translateY(15px);
+        transform:translateY(22px);
     }
+
     to{
         opacity:1;
         transform:none;
@@ -410,65 +579,319 @@ body:after{
 
 .result-header .mini{
     color:var(--gold2);
+
     letter-spacing:4px;
-    font-size:11px;
+
+    font-size:10px;
 }
 
 .result-header h2{
-    margin-top:12px;
+    margin-top:13px;
+
     font-family:Georgia,serif;
+
     font-size:32px;
+
+    font-weight:500;
 }
 
 .life-number{
-    width:130px;
-    height:130px;
-    margin:28px auto;
-    border:2px solid var(--gold2);
+    width:140px;
+    height:140px;
+
+    margin:29px auto;
+
+    border:
+        2px solid
+        var(--gold2);
+
     border-radius:50%;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     font-family:Georgia,serif;
-    font-size:58px;
+
+    font-size:60px;
+
     color:#f0d18d;
+
     box-shadow:
-        0 0 40px rgba(215,173,97,.12),
-        inset 0 0 30px rgba(215,173,97,.05);
+        0 0 45px
+        rgba(215,173,97,.13),
+
+        inset 0 0 30px
+        rgba(215,173,97,.05);
 }
+
+.result-intro{
+    color:#9a9da8;
+
+    line-height:1.75;
+
+    max-width:680px;
+
+    margin:auto;
+}
+
+/* RESULT GRID */
 
 .result-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:16px;
+
+    margin-top:32px;
 }
 
 .result-box{
-    padding:22px;
+    padding:23px 15px;
+
     text-align:center;
-    border:1px solid rgba(215,173,97,.22);
-    border-radius:18px;
-    background:rgba(0,0,0,.2);
+
+    border:
+        1px solid
+        rgba(215,173,97,.22);
+
+    border-radius:19px;
+
+    background:
+        rgba(0,0,0,.20);
 }
 
 .result-box strong{
     display:block;
+
     margin-bottom:8px;
+
     color:var(--gold2);
+
+    font-size:14px;
 }
 
 .result-box span{
-    color:#999ca7;
+    color:#b5b7c0;
+
+    font-size:14px;
+}
+
+/* INTERPRETATION */
+
+.interpretation{
+    margin-top:25px;
+
+    padding:25px;
+
+    border:
+        1px solid
+        rgba(215,173,97,.18);
+
+    border-radius:22px;
+
+    background:
+        rgba(0,0,0,.16);
+}
+
+.interpretation h3{
+    margin-bottom:12px;
+
+    color:var(--gold2);
+
+    font-family:Georgia,serif;
+
+    font-size:20px;
+}
+
+.interpretation p{
+    color:#9699a5;
+
+    line-height:1.75;
+
+    font-size:14px;
+}
+
+/* RESET */
+
+.reset-btn{
+    display:block;
+
+    margin:
+        25px
+        auto
+        0;
+
+    padding:
+        12px
+        20px;
+
+    border:
+        1px solid
+        rgba(215,173,97,.35);
+
+    border-radius:50px;
+
+    background:
+        transparent;
+
+    color:#aaa;
+
+    cursor:pointer;
+
     font-size:13px;
+
+    transition:.25s;
+}
+
+.reset-btn:hover{
+    color:var(--gold2);
+
+    border-color:var(--gold);
+}
+
+/* BOTTOM */
+
+.bottom{
+    margin-top:48px;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 310px;
+
+    gap:35px;
+
+    align-items:center;
+}
+
+.quote{
+    padding:
+        15px
+        10px
+        20px;
+}
+
+.quote-mark{
+    font-family:Georgia,serif;
+
+    font-size:65px;
+
+    line-height:.5;
+
+    color:var(--gold2);
+}
+
+.quote-text{
+    margin-top:20px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-style:italic;
+
+    font-size:25px;
+
+    line-height:1.65;
+
+    color:#c4c5cc;
+
+    max-width:600px;
+}
+
+.quote-label{
+    margin-top:25px;
+
+    padding-top:17px;
+
+    width:130px;
+
+    border-top:
+        1px solid
+        var(--gold);
+
+    color:#999ba5;
+
+    font-size:10px;
+
+    letter-spacing:5px;
+}
+
+/* SIGNATURE */
+
+.signature{
+    text-align:center;
+
+    padding:31px 20px;
+
+    border:
+        1px solid
+        var(--gold);
+
+    border-radius:25px;
+
+    background:
+        rgba(12,13,19,.72);
+
+    box-shadow:
+        0 20px 55px
+        rgba(0,0,0,.25);
+}
+
+.signature .to{
+    font-family:Georgia,serif;
+
+    font-size:32px;
+
+    color:#f0d18d;
+
+    letter-spacing:3px;
+}
+
+.signature .creator{
+    margin-top:14px;
+
+    color:#e8e6df;
+
+    font-size:15px;
+}
+
+.signature .small-line{
+    width:45px;
+    height:1px;
+
+    background:var(--gold);
+
+    margin:
+        19px
+        auto;
+}
+
+.signature .copyright{
+    color:#8c8e99;
+
+    font-size:13px;
+
+    letter-spacing:1px;
 }
 
 /* FOOTER */
 
 footer{
     text-align:center;
+
     margin-top:50px;
+
     color:#646875;
-    font-size:12px;
+
+    font-size:11px;
+
+    letter-spacing:.5px;
 }
 
 /* MOBILE */
@@ -476,27 +899,61 @@ footer{
 @media(max-width:720px){
 
     .container{
-        width:min(100% - 20px,1120px);
-        padding-top:30px;
+        width:
+            calc(100% - 20px);
+
+        padding:
+            30px
+            0
+            55px;
     }
 
     .hero{
-        padding:15px 10px 30px;
+        padding:
+            15px
+            10px
+            30px;
+    }
+
+    .badge{
+        font-size:9px;
+
+        letter-spacing:2.5px;
+
+        padding:
+            10px
+            15px;
     }
 
     .logo{
         font-size:53px;
-        margin-top:24px;
+
+        margin-top:25px;
     }
 
     .subtitle{
         font-size:16px;
-        line-height:1.6;
+
+        line-height:1.65;
     }
 
     .form-card{
-        padding:25px 18px;
+        padding:
+            26px
+            18px;
+
         border-radius:25px;
+    }
+
+    .section-title{
+        gap:13px;
+    }
+
+    .section-icon{
+        width:45px;
+        height:45px;
+
+        font-size:20px;
     }
 
     .section-title h2{
@@ -505,308 +962,516 @@ footer{
 
     .section-desc{
         margin-left:0;
+
         margin-top:12px;
-        font-size:14px;
+
+        margin-bottom:25px;
+
+        font-size:13px;
     }
 
     .grid{
         grid-template-columns:1fr;
+
         gap:19px;
     }
 
     .field input{
         height:61px;
+
         border-radius:16px;
+
+        font-size:16px;
     }
 
     .solve-btn{
         height:64px;
-        font-size:17px;
+
+        font-size:16px;
+
+        border-radius:17px;
+    }
+
+    .disclaimer{
+        font-size:11px;
     }
 
     .features{
         grid-template-columns:1fr;
+
+        gap:15px;
     }
 
     .feature{
         min-height:auto;
-        padding:25px;
+
+        padding:24px;
     }
 
     .bottom{
         grid-template-columns:1fr;
+
         gap:25px;
     }
 
     .quote{
-        padding:10px 15px;
+        padding:
+            10px
+            15px;
     }
 
     .quote-text{
         font-size:21px;
     }
 
+    .signature{
+        padding:28px 18px;
+    }
+
     .result{
-        padding:27px 18px;
+        padding:
+            28px
+            18px;
+
+        border-radius:25px;
+    }
+
+    .result-header h2{
+        font-size:26px;
+    }
+
+    .life-number{
+        width:125px;
+        height:125px;
+
+        font-size:54px;
     }
 
     .result-grid{
         grid-template-columns:1fr;
+
+        gap:12px;
     }
+
+    .interpretation{
+        padding:20px;
+    }
+
 }
 
-@media(min-width:721px){
-    .feature:hover{
-        transform:translateY(-4px);
-        border-color:rgba(215,173,97,.5);
+/* SMALL PHONES */
+
+@media(max-width:380px){
+
+    .logo{
+        font-size:47px;
     }
+
+    .badge{
+        letter-spacing:2px;
+    }
+
+    .container{
+        width:
+            calc(100% - 14px);
+    }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
-    <header class="hero">
+<header class="hero">
 
-        <div class="badge">
-            KİŞİSEL NUMEROLOJİ REHBERİ
+    <div class="badge">
+        KİŞİSEL NUMEROLOJİ REHBERİ
+    </div>
+
+    <h1 class="logo">
+        HAYAT <span>KODU</span>
+    </h1>
+
+    <p class="subtitle">
+        Doğum tarihin, ismin, doğum saatin ve doğduğun
+        yerden oluşturulan sembolik kişisel profilini keşfet.
+    </p>
+
+    <div class="gold-line"></div>
+
+</header>
+
+
+<main>
+
+<section class="card form-card">
+
+    <div class="section-title">
+
+        <div class="section-icon">
+            ✦
         </div>
 
-        <h1 class="logo">
-            HAYAT <span>KODU</span>
-        </h1>
+        <h2>
+            Kişisel bilgilerin
+        </h2>
 
-        <p class="subtitle">
-            Doğum tarihin, ismin, doğum saatin ve doğduğun
-            yerden oluşturulan sembolik kişisel profilini keşfet.
+    </div>
+
+    <p class="section-desc">
+        Sana özel yaşam haritanı oluşturmak için temel bilgilerini gir.
+    </p>
+
+
+    <div class="grid">
+
+        <div class="field">
+
+            <label for="name">
+                Adın
+            </label>
+
+            <input
+                id="name"
+                type="text"
+                placeholder="Örn. Taner"
+                autocomplete="given-name"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label for="surname">
+                Soyadın
+            </label>
+
+            <input
+                id="surname"
+                type="text"
+                placeholder="Örn. Öztürk"
+                autocomplete="family-name"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label for="birth">
+                Doğum tarihin
+            </label>
+
+            <input
+                id="birth"
+                type="date"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label for="time">
+                Doğum saatin
+            </label>
+
+            <input
+                id="time"
+                type="time"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label for="city">
+                Doğduğun il
+            </label>
+
+            <input
+                id="city"
+                type="text"
+                placeholder="Örn. Kahramanmaraş"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label for="district">
+                Doğduğun ilçe
+            </label>
+
+            <input
+                id="district"
+                type="text"
+                placeholder="Örn. Dulkadiroğlu"
+            >
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="solve-btn"
+        onclick="solve()"
+    >
+        HAYAT KODUMU ÇÖZ &nbsp; →
+    </button>
+
+
+    <div class="disclaimer">
+
+        <div class="info">
+            i
+        </div>
+
+        <div>
+            Bu uygulama numerolojiyi bilimsel bir kişilik veya
+            gelecek tahmini olarak sunmaz. Sonuçlar sembolik
+            öz-refleksiyon ve kişisel gelişim amacıyla hazırlanır.
+        </div>
+
+    </div>
+
+</section>
+
+
+<section
+    id="result"
+    class="card result"
+>
+
+    <div class="result-header">
+
+        <div class="mini">
+            KİŞİSEL HAYAT KODUN
+        </div>
+
+        <h2 id="resultTitle">
+            Hayat haritan
+        </h2>
+
+        <div
+            class="life-number"
+            id="lifeNumber"
+        >
+            —
+        </div>
+
+        <p
+            class="result-intro"
+            id="resultText"
+        >
+            Sonuçların burada görünecek.
         </p>
 
-        <div class="gold-line"></div>
+    </div>
 
-    </header>
 
+    <div class="result-grid">
 
-    <main>
+        <div class="result-box">
 
-        <section class="card form-card">
+            <strong>
+                Yaşam Yolu
+            </strong>
 
-            <div class="section-title">
+            <span id="lifeBox">
+                —
+            </span>
 
-                <div class="section-icon">♙</div>
+        </div>
 
-                <h2>Kişisel bilgilerin</h2>
 
-            </div>
+        <div class="result-box">
 
-            <p class="section-desc">
-                Sana özel yaşam haritanı oluşturmak için gerekli temel bilgiler.
-            </p>
+            <strong>
+                İsim Enerjisi
+            </strong>
 
+            <span id="nameBox">
+                —
+            </span>
 
-            <div class="grid">
+        </div>
 
-                <div class="field">
-                    <label for="name">Adın</label>
-                    <input id="name" type="text" placeholder="Örn. Taner">
-                </div>
 
-                <div class="field">
-                    <label for="surname">Soyadın</label>
-                    <input id="surname" type="text" placeholder="Örn. Öztürk">
-                </div>
+        <div class="result-box">
 
-                <div class="field">
-                    <label for="birth">Doğum tarihin</label>
-                    <input id="birth" type="date">
-                </div>
+            <strong>
+                Doğum Günü
+            </strong>
 
-                <div class="field">
-                    <label for="time">Doğum saatin</label>
-                    <input id="time" type="time">
-                </div>
+            <span id="dayBox">
+                —
+            </span>
 
-                <div class="field">
-                    <label for="city">Doğduğun il</label>
-                    <input id="city" type="text" placeholder="Örn. Kahramanmaraş">
-                </div>
+        </div>
 
-                <div class="field">
-                    <label for="district">Doğduğun ilçe</label>
-                    <input id="district" type="text" placeholder="Örn. Dulkadiroğlu">
-                </div>
+    </div>
 
-            </div>
 
+    <div class="interpretation">
 
-            <button class="solve-btn" onclick="solve()">
-                HAYAT KODUMU ÇÖZ &nbsp; → 
-            </button>
+        <h3>
+            ✦ Hayat Kodunun Mesajı
+        </h3>
 
+        <p id="meaningText">
+            Analiz tamamlandığında burada sana özel
+            sembolik yorumun görünecek.
+        </p>
 
-            <div class="disclaimer">
+    </div>
 
-                <div class="info">i</div>
 
-                <div>
-                    Bu uygulama numerolojiyi bilimsel bir kişilik veya gelecek
-                    tahmini olarak sunmaz. Sonuçlar sembolik öz-refleksiyon
-                    ve kişisel gelişim amacıyla hazırlanır.
-                </div>
+    <button
+        class="reset-btn"
+        onclick="newAnalysis()"
+    >
+        ↻ Yeni analiz yap
+    </button>
 
-            </div>
+</section>
 
-        </section>
 
+<section class="features">
 
-        <section id="result" class="card result">
+    <div class="feature card">
 
-            <div class="result-header">
+        <div class="feature-icon">
+            ◈
+        </div>
 
-                <div class="mini">
-                    KİŞİSEL HAYAT KODUN
-                </div>
+        <h3>
+            Kendini Anla
+        </h3>
 
-                <h2 id="resultTitle">
-                    Hayat haritan
-                </h2>
+        <p>
+            Doğal yönlerini ve karakter eğilimlerini keşfet.
+        </p>
 
-                <div class="life-number" id="lifeNumber">
-                    —
-                </div>
+    </div>
 
-                <p id="resultText" style="color:#9a9da8;line-height:1.7;max-width:650px;margin:auto;">
-                    Sonuçların burada görünecek.
-                </p>
 
-            </div>
+    <div class="feature card">
 
+        <div class="feature-icon">
+            ✦
+        </div>
 
-            <div class="result-grid" style="margin-top:30px;">
+        <h3>
+            Potansiyelini Gör
+        </h3>
 
-                <div class="result-box">
-                    <strong>Yaşam Yolu</strong>
-                    <span id="lifeBox">—</span>
-                </div>
+        <p>
+            Güçlü taraflarını fark ederek kendine yeni bir bakış kazan.
+        </p>
 
-                <div class="result-box">
-                    <strong>İsim Enerjisi</strong>
-                    <span id="nameBox">—</span>
-                </div>
+    </div>
 
-                <div class="result-box">
-                    <strong>Doğum Günü</strong>
-                    <span id="dayBox">—</span>
-                </div>
 
-            </div>
+    <div class="feature card">
 
-        </section>
+        <div class="feature-icon">
+            ♡
+        </div>
 
+        <h3>
+            Daha Bilinçli Yaşa
+        </h3>
 
-        <section class="features">
+        <p>
+            Kendi yolunu oluştururken sembolik bir rehberden yararlan.
+        </p>
 
-            <div class="feature card">
+    </div>
 
-                <div class="feature-icon">▥</div>
+</section>
 
-                <h3>Kendini Anla</h3>
 
-                <p>
-                    Doğal yönlerini keşfet
-                </p>
+<section class="bottom">
 
-            </div>
+    <div class="quote">
 
+        <div class="quote-mark">
+            “
+        </div>
 
-            <div class="feature card">
+        <div class="quote-text">
+            Kendini tanımak,<br>
+            daha iyi bir yarın inşa etmenin ilk adımıdır.
+        </div>
 
-                <div class="feature-icon">◈</div>
+        <div class="quote-label">
+            HAYAT KODU
+        </div>
 
-                <h3>Potansiyelini Gör</h3>
+    </div>
 
-                <p>
-                    Fırsatlarını değerlendir
-                </p>
 
-            </div>
+    <div class="signature">
 
+        <div class="to">
+            ✦ TO ✦
+        </div>
 
-            <div class="feature card">
+        <div class="creator">
+            Hayat Kodu’nun yaratıcısı
+        </div>
 
-                <div class="feature-icon">♡</div>
+        <div class="small-line"></div>
 
-                <h3>Daha Bilinçli Yaşa</h3>
+        <div class="copyright">
+            © 2026 Taner Öztürk
+        </div>
 
-                <p>
-                    Kendi yolunu oluştur
-                </p>
+    </div>
 
-            </div>
+</section>
 
-        </section>
+</main>
 
 
-        <section class="bottom">
-
-            <div class="quote">
-
-                <div class="quote-mark">“</div>
-
-                <div class="quote-text">
-                    Kendini tanımak,<br>
-                    daha iyi bir yarın inşa etmenin ilk adımıdır.
-                </div>
-
-                <div class="quote-label">
-                    HAYAT KODU
-                </div>
-
-            </div>
-
-
-            <div class="signature">
-
-                <div class="to">
-                    ✦ TO ✦
-                </div>
-
-                <div class="creator">
-                    Hayat Kodu’nun yaratıcısı
-                </div>
-
-                <div class="small-line"></div>
-
-                <div class="copyright">
-                    © 2026 Taner Öztürk
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <footer>
-        HAYAT KODU · Sembolik öz-refleksiyon deneyimi
-    </footer>
+<footer>
+    HAYAT KODU · Sembolik öz-refleksiyon deneyimi
+</footer>
 
 </div>
 
 
 <script>
 
+/* =========================
+   NUMEROLOJİ MOTORU
+========================= */
+
 function reduceNumber(number){
 
-    while(number > 9 && number !== 11 && number !== 22 && number !== 33){
+    while(
+        number > 9 &&
+        number !== 11 &&
+        number !== 22 &&
+        number !== 33
+    ){
 
         let total = 0;
 
-        String(number).split("").forEach(function(n){
-            total += Number(n);
-        });
+        String(number)
+            .split("")
+            .forEach(function(n){
+                total += Number(n);
+            });
 
         number = total;
     }
@@ -815,30 +1480,77 @@ function reduceNumber(number){
 }
 
 
+/* =========================
+   YAŞAM YOLU
+========================= */
+
 function dateLifeNumber(date){
 
-    let numbers = date.replaceAll("-","");
+    let numbers =
+        date.replaceAll("-","");
 
     let total = 0;
 
-    for(let i=0;i<numbers.length;i++){
+    for(
+        let i = 0;
+        i < numbers.length;
+        i++
+    ){
+
         total += Number(numbers[i]);
+
     }
 
     return reduceNumber(total);
 }
 
 
+/* =========================
+   İSİM SAYISI
+========================= */
+
 function nameNumber(name){
 
     const values = {
-        "A":1,"B":2,"C":3,"Ç":3,"D":4,
-        "E":5,"F":6,"G":7,"Ğ":7,"H":8,
-        "I":9,"İ":9,"J":1,"K":2,"L":3,
-        "M":4,"N":5,"O":6,"Ö":6,"P":7,
-        "Q":8,"R":9,"S":1,"Ş":1,"T":2,
-        "U":3,"Ü":3,"V":4,"W":5,"X":6,
-        "Y":7,"Z":8
+
+        "A":1,
+        "B":2,
+        "C":3,
+        "Ç":3,
+        "D":4,
+
+        "E":5,
+        "F":6,
+        "G":7,
+        "Ğ":7,
+        "H":8,
+
+        "I":9,
+        "İ":9,
+        "J":1,
+        "K":2,
+        "L":3,
+
+        "M":4,
+        "N":5,
+        "O":6,
+        "Ö":6,
+        "P":7,
+
+        "Q":8,
+        "R":9,
+        "S":1,
+        "Ş":1,
+        "T":2,
+
+        "U":3,
+        "Ü":3,
+        "V":4,
+        "W":5,
+        "X":6,
+
+        "Y":7,
+        "Z":8
     };
 
     let total = 0;
@@ -858,85 +1570,287 @@ function nameNumber(name){
 }
 
 
+/* =========================
+   SAYI ANLAMLARI
+========================= */
+
 function meaning(number){
 
     const meanings = {
 
-        1:"Bağımsızlık, liderlik ve kendi yolunu açma enerjisi.",
+        1:
+        "Bağımsızlık, liderlik ve kendi yolunu açma enerjisini temsil eder. Başlatıcı olmak, karar almak ve kendi ayaklarının üzerinde durmak önemli temalardır.",
 
-        2:"Uyum, sezgi, iş birliği ve güçlü ilişkiler enerjisi.",
+        2:
+        "Uyum, sezgi, iş birliği ve ilişkiler ön plandadır. İnsanları anlamak ve dengeli bağlar kurmak güçlü taraflardan biri olabilir.",
 
-        3:"Yaratıcılık, iletişim ve kendini ifade etme enerjisi.",
+        3:
+        "Yaratıcılık, iletişim ve kendini ifade etme enerjisidir. Konuşmak, üretmek, anlatmak ve çevreye neşe katmak önemli temalar olabilir.",
 
-        4:"Düzen, disiplin, güven ve sağlam temeller oluşturma enerjisi.",
+        4:
+        "Düzen, disiplin, güven ve sağlam temeller oluşturma enerjisidir. Sabırla ilerlemek ve kalıcı işler ortaya koymak öne çıkar.",
 
-        5:"Özgürlük, değişim, merak ve deneyim enerjisi.",
+        5:
+        "Özgürlük, değişim, merak ve deneyim enerjisidir. Tekdüzelikten uzaklaşma ve yeni şeyler keşfetme isteği güçlü olabilir.",
 
-        6:"Sorumluluk, sevgi, aile ve koruyuculuk enerjisi.",
+        6:
+        "Sorumluluk, sevgi, aile ve koruyuculuk enerjisidir. Yakın çevreye destek olmak ve güven veren ilişkiler kurmak önem kazanabilir.",
 
-        7:"Derin düşünce, araştırma, sezgi ve içsel keşif enerjisi.",
+        7:
+        "Derin düşünce, araştırma, sezgi ve içsel keşif enerjisidir. Olayların görünen yüzünden fazlasını anlamaya yönelik güçlü bir merak vardır.",
 
-        8:"Güç, hedef, yönetim ve maddi dünyada başarı enerjisi.",
+        8:
+        "Güç, hedef, yönetim ve maddi dünyada başarı enerjisidir. Organizasyon, sorumluluk ve somut sonuç alma konuları öne çıkabilir.",
 
-        9:"Empati, idealizm, tamamlanma ve insanlara katkı enerjisi.",
+        9:
+        "Empati, idealizm, tamamlanma ve insanlara katkı enerjisidir. Daha büyük bir anlam arayışı ve başkalarına fayda sağlama isteği görülebilir.",
 
-        11:"Güçlü sezgi, ilham ve yüksek farkındalık enerjisi.",
+        11:
+        "Güçlü sezgi, ilham ve yüksek farkındalıkla ilişkilendirilen özel bir sayıdır. Fikirler ve sezgiler yoğun olabilir.",
 
-        22:"Büyük fikirleri somutlaştırma ve uzun vadeli yapı kurma enerjisi.",
+        22:
+        "Büyük fikirleri somutlaştırma ve uzun vadeli yapılar kurma enerjisidir. Hayalleri planlı biçimde gerçeğe dönüştürme teması öne çıkar.",
 
-        33:"Şefkat, öğreticilik ve başkalarına ilham verme enerjisi."
+        33:
+        "Şefkat, öğreticilik ve başkalarına ilham verme enerjisidir. Bilgiyi ve deneyimi başkalarının gelişimine aktarma teması güçlüdür."
 
     };
 
-    return meanings[number] || "Kişisel gelişim ve keşif enerjisi.";
+    return meanings[number]
+        ||
+        "Kişisel gelişim, farkındalık ve keşif enerjisi.";
 }
 
 
+/* =========================
+   TARİH KONTROLÜ
+========================= */
+
+function validDate(date){
+
+    if(!date){
+        return false;
+    }
+
+    const d =
+        new Date(date + "T00:00:00");
+
+    return !isNaN(d.getTime());
+}
+
+
+/* =========================
+   ANALİZ
+========================= */
+
 function solve(){
 
-    const name = document.getElementById("name").value.trim();
+    const name =
+        document
+        .getElementById("name")
+        .value
+        .trim();
 
-    const surname = document.getElementById("surname").value.trim();
+    const surname =
+        document
+        .getElementById("surname")
+        .value
+        .trim();
 
-    const birth = document.getElementById("birth").value;
+    const birth =
+        document
+        .getElementById("birth")
+        .value;
 
-    if(!name || !birth){
+    const time =
+        document
+        .getElementById("time")
+        .value;
 
-        alert("Lütfen en azından adını ve doğum tarihini gir.");
+    const city =
+        document
+        .getElementById("city")
+        .value
+        .trim();
+
+    const district =
+        document
+        .getElementById("district")
+        .value
+        .trim();
+
+
+    if(!name){
+
+        alert(
+            "Önce adını yazmalısın."
+        );
 
         return;
     }
 
 
-    const life = dateLifeNumber(birth);
+    if(!validDate(birth)){
 
-    const fullName = name + " " + surname;
+        alert(
+            "Lütfen doğum tarihini seç."
+        );
 
-    const nameEnergy = nameNumber(fullName);
-
-    const date = new Date(birth + "T00:00:00");
-
-    const day = reduceNumber(date.getDate());
+        return;
+    }
 
 
-    document.getElementById("lifeNumber").textContent = life;
+    /* SAYILARI HESAPLA */
 
-    document.getElementById("lifeBox").textContent = life;
+    const life =
+        dateLifeNumber(birth);
 
-    document.getElementById("nameBox").textContent = nameEnergy;
 
-    document.getElementById("dayBox").textContent = day;
+    const fullName =
+        name + " " + surname;
 
-    document.getElementById("resultTitle").textContent =
-        name + " için sembolik haritan";
 
-    document.getElementById("resultText").textContent =
+    const nameEnergy =
+        nameNumber(fullName);
+
+
+    const date =
+        new Date(
+            birth + "T00:00:00"
+        );
+
+
+    const day =
+        reduceNumber(
+            date.getDate()
+        );
+
+
+    /* EKRANA AKTAR */
+
+    document
+        .getElementById("lifeNumber")
+        .textContent = life;
+
+
+    document
+        .getElementById("lifeBox")
+        .textContent = life;
+
+
+    document
+        .getElementById("nameBox")
+        .textContent = nameEnergy;
+
+
+    document
+        .getElementById("dayBox")
+        .textContent = day;
+
+
+    document
+        .getElementById("resultTitle")
+        .textContent =
+        name +
+        " için sembolik haritan";
+
+
+    document
+        .getElementById("resultText")
+        .textContent =
         meaning(life);
 
 
-    const result = document.getElementById("result");
+    /* DETAYLI MESAJ */
+
+    let locationText = "";
+
+    if(city){
+
+        locationText =
+            city;
+
+        if(district){
+            locationText +=
+                " / " +
+                district;
+        }
+
+    }
+
+
+    let extraText =
+        "Yaşam yolu sayın " +
+        life +
+        " olarak hesaplandı. " +
+        "İsim enerjin " +
+        nameEnergy +
+        " ve doğum günü enerjin " +
+        day +
+        " olarak ortaya çıkıyor.";
+
+
+    if(time){
+
+        extraText +=
+            " Doğum saatin " +
+            time +
+            " olduğu için kişisel profilinde zaman bilgisi de dikkate alındı.";
+
+    }
+
+
+    if(locationText){
+
+        extraText +=
+            " Doğum yerin: " +
+            locationText +
+            ".";
+
+    }
+
+
+    document
+        .getElementById("meaningText")
+        .textContent =
+        extraText +
+        " Bu sonuçlar bilimsel bir kişilik testi değil, kendini düşünmek ve farklı yönlerini keşfetmek için sembolik bir rehber olarak değerlendirilmelidir.";
+
+
+    /* KAYDET */
+
+    const data = {
+
+        name:name,
+
+        surname:surname,
+
+        birth:birth,
+
+        time:time,
+
+        city:city,
+
+        district:district
+
+    };
+
+
+    localStorage.setItem(
+        "hayatKoduData",
+        JSON.stringify(data)
+    );
+
+
+    /* GÖSTER */
+
+    const result =
+        document
+        .getElementById("result");
+
 
     result.classList.add("show");
+
 
     setTimeout(function(){
 
@@ -948,6 +1862,100 @@ function solve(){
     },100);
 
 }
+
+
+/* =========================
+   YENİ ANALİZ
+========================= */
+
+function newAnalysis(){
+
+    document
+        .getElementById("result")
+        .classList.remove("show");
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================
+   KAYITLI BİLGİLERİ YÜKLE
+========================= */
+
+window.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        try{
+
+            const saved =
+                localStorage.getItem(
+                    "hayatKoduData"
+                );
+
+
+            if(!saved){
+                return;
+            }
+
+
+            const data =
+                JSON.parse(saved);
+
+
+            document
+                .getElementById("name")
+                .value =
+                data.name || "";
+
+
+            document
+                .getElementById("surname")
+                .value =
+                data.surname || "";
+
+
+            document
+                .getElementById("birth")
+                .value =
+                data.birth || "";
+
+
+            document
+                .getElementById("time")
+                .value =
+                data.time || "";
+
+
+            document
+                .getElementById("city")
+                .value =
+                data.city || "";
+
+
+            document
+                .getElementById("district")
+                .value =
+                data.district || "";
+
+        }
+
+        catch(error){
+
+            console.log(
+                "Kayıt yüklenemedi.",
+                error
+            );
+
+        }
+
+    }
+);
 
 </script>
 
